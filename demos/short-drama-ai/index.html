@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>红果娱乐 · App 体验</title>
+<style>
+:root{--bg:oklch(0.145 0.008 275);--surface:oklch(0.205 0.009 275);--fg:oklch(0.97 0.003 275);--muted:oklch(0.70 0.012 275);--border:oklch(0.30 0.012 275);--accent:oklch(0.57 0.22 24);--gold:oklch(0.80 0.10 80);--display:'Microsoft YaHei','PingFang SC',sans-serif;--body:'Segoe UI','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:oklch(0.115 0.006 275);color:var(--fg);font:14px/1.6 var(--body)}button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:none;border:0;letter-spacing:.02em}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}button:hover{background-color:oklch(0.29 0.012 275);color:var(--fg)}button:disabled{opacity:.5;cursor:default}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:0}h2{font-size:20px;line-height:1.4}h3{font-size:16px}small,.small{font-size:12px;letter-spacing:.015em;color:var(--muted)}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}img{display:block;max-width:100%}a{color:inherit}.studio{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.rail{border-right:1px solid var(--border);padding:36px 24px;position:fixed;width:230px;height:100vh;display:flex;flex-direction:column}.brand{display:flex;gap:10px;align-items:center;font-size:18px;font-weight:600}.logo{width:34px;height:34px;background:var(--accent);border-radius:10px;display:grid;place-items:center;font-size:23px;font-family:Georgia,serif;font-style:italic;color:white}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:10px;color:var(--muted)}.rail .eyebrow{margin:8px 0 36px 44px}.rail-label{font-size:11px;color:var(--muted);letter-spacing:.08em;margin:0 12px 14px}.rail nav{display:grid;gap:6px}.rail nav button{padding:11px 12px;display:flex;align-items:center;gap:12px;border-radius:8px;text-align:left;color:var(--muted)}.rail nav button.active{background:var(--surface);color:var(--fg)}.rail nav button.active:after{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;margin-left:auto}.rail-foot{margin-top:auto;font-size:11px;color:var(--muted);line-height:1.9;border-top:1px solid var(--border);padding-top:20px}.stage{grid-column:2;padding:28px 40px;min-width:0}.desk-head{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto}.desk-head h1{font-size:16px}.desk-head p{font-size:12px;color:var(--muted);margin-top:3px}.pill{border:1px solid var(--border);border-radius:30px;padding:5px 10px;font-size:11px;color:var(--muted)}.preview-area{display:flex;justify-content:center;align-items:center;gap:65px;margin-top:28px}.phone{width:390px;height:844px;flex-shrink:0;background:var(--bg);border:1px solid oklch(.36 .008 275);border-radius:40px;position:relative;overflow:hidden;box-shadow:0 30px 80px oklch(0 0 0/.4)}.status{height:45px;display:flex;align-items:center;justify-content:space-between;padding:12px 26px 0;font-size:13px;font-weight:600;background:var(--bg)}.status-icons{display:flex;gap:5px;align-items:center}.status-icons svg{width:17px;height:17px}.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:105px;height:24px;border-radius:20px;background:oklch(.06 0 0)}.screen{height:calc(100% - 45px);overflow-y:auto;scrollbar-width:none;padding-bottom:91px}.screen::-webkit-scrollbar{display:none}.screen.full{padding-bottom:0}.topbar{height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:8px}.topbar .brand{font-size:19px}.topbar .logo{width:26px;height:26px;border-radius:8px;font-size:20px}.iconbtn{min-width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}.back-title{display:flex;align-items:center;gap:2px;min-width:0}.back-title h2{font-size:18px}.bottom-nav{position:absolute;bottom:0;width:100%;height:82px;padding:7px 15px 21px;display:flex;justify-content:space-around;background:oklch(.16 .008 275/.97);border-top:1px solid var(--border);z-index:10}.bottom-nav:after{content:'';position:absolute;bottom:7px;width:110px;height:4px;background:var(--fg);border-radius:4px;opacity:.7}.bottom-nav button{width:65px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;color:var(--muted)}.bottom-nav button.active{color:oklch(.72 .17 24)}.content{padding:0 20px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0 14px}.section-head button{font-size:12px;color:var(--muted);min-height:44px;padding:0 0 0 10px}.hero{height:310px;position:relative;margin:0 14px;isolation:isolate;border-radius:16px;overflow:hidden;background:var(--surface)}.hero>img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.6)}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,transparent 85%);z-index:0}.hero-copy{position:absolute;left:20px;bottom:20px;right:20px;z-index:1}.kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:32px;line-height:1.35;margin:8px 0 4px}.hero p{color:oklch(.85 .008 275);font-size:12px}.hero-actions{display:flex;align-items:center;gap:14px;margin-top:15px}.primary{min-height:44px;border-radius:9px;padding:10px 20px;background:var(--accent);color:white;font-weight:600;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary:hover{background:oklch(.48 .21 24);color:white}.primary svg{width:16px;height:16px}.secondary{border:1px solid var(--border);border-radius:9px;min-height:44px;padding:10px 16px;background:var(--surface)}.wide{width:100%}.gold{color:var(--gold)}.hero-dots{display:flex;gap:4px;position:absolute;top:16px;right:16px;z-index:1}.hero-dots i{width:4px;height:4px;border-radius:4px;background:oklch(.9 0 0/.4)}.hero-dots i:first-child{width:16px;background:white}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.quick{position:relative;border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:16px 12px;text-align:left;overflow:hidden;min-height:89px}.quick p{font-size:11px;color:var(--muted);margin-top:4px}.quick svg{position:absolute;right:12px;top:18px;width:23px;height:23px;color:var(--muted)}.quick h3{font-size:14px}.npc-row{display:flex;gap:8px;justify-content:space-between}.npc-circle{width:67px;text-align:center;padding:0}.npc-circle .portrait{width:66px;height:66px;border-radius:50%;overflow:hidden;border:2px solid var(--border);padding:3px;position:relative}.portrait img{height:100%;width:100%;object-fit:cover;border-radius:50%}.npc-circle span{display:block;font-size:12px;margin-top:7px}.npc-circle small{font-size:10px}.online{display:inline-block;width:5px;height:5px;background:oklch(.76 .13 155);border-radius:50%;margin-right:4px}.poster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.poster-grid.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.poster-card{text-align:left;padding:0;border-radius:10px;min-width:0}.poster{position:relative;aspect-ratio:2/3;overflow:hidden;border-radius:9px;background:var(--surface)}.poster>img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}.poster:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,oklch(.10 .01 275/.85))}.poster-title{position:absolute;bottom:14px;left:12px;right:8px;z-index:1;font-family:var(--display);font-size:22px;line-height:1.4;font-weight:600}.three .poster-title{font-size:15px;bottom:10px;left:8px}.tag{position:absolute;top:8px;left:8px;font-size:9px;padding:2px 5px;border-radius:4px;background:oklch(.12 .005 275/.8);z-index:2}.poster-card h3{font-size:13px;margin-top:8px}.poster-card small{display:block;font-size:10px;margin-top:3px}.footnote{font-size:10px;color:var(--muted);padding:24px 0 4px;line-height:1.7}.review-note{width:205px;color:var(--muted);align-self:center}.review-note .number{font-size:56px;font-weight:400;letter-spacing:-.04em;line-height:1;color:var(--border);font-family:Georgia,serif}.review-note h2{font-size:18px;color:var(--fg);margin:20px 0 12px}.review-note p{font-size:12px;line-height:1.9}.review-note hr{border:0;border-top:1px solid var(--border);margin:24px 0}.review-note .mini{font-size:10px;letter-spacing:.12em}.search{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0 12px;gap:8px}.search input{width:100%;background:none;border:0;outline:none;color:var(--fg);height:44px;min-width:0}.search svg{width:18px}.chips{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding:16px 0}.chip{white-space:nowrap;min-height:38px;border-radius:20px;padding:6px 14px;color:var(--muted);border:1px solid var(--border);font-size:12px}.chip.selected{background:var(--fg);color:var(--bg);border-color:var(--fg)}.filters{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.filters select{background:var(--bg);color:var(--muted);border:0;font-size:12px;max-width:110px}.card{padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:14px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.row-start{display:flex;align-items:center;gap:12px}.avatar{width:48px;height:48px;object-fit:cover;border-radius:50%}.npc-card{padding:0;position:relative;height:230px;overflow:hidden;border-radius:14px;text-align:left;display:block;width:100%;margin-bottom:14px}.npc-card img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:brightness(.65)}.npc-card:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent,oklch(.1 .01 275/.95))}.npc-card .info{position:absolute;bottom:17px;left:18px;right:18px;z-index:1}.npc-card h3{font-size:22px}.npc-card p{font-size:12px;margin:3px 0 10px}.npc-card .info small{font-size:10px}.npc-card .arrow{position:absolute;right:0;bottom:0;width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--muted);border-radius:50%}.balance{padding:23px;background:var(--surface);border:1px solid var(--border);border-radius:15px}.balance .amount{font-size:42px;letter-spacing:-.02em;font-weight:600;line-height:1.4;margin:6px 0 12px}.balance .amount span{font-size:13px;font-weight:400;color:var(--muted);margin-left:8px}.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:20px 0}.day{text-align:center;font-size:10px;color:var(--muted)}.day b{display:flex;align-items:center;justify-content:center;height:44px;background:var(--surface);border:1px solid var(--border);border-radius:9px;color:var(--gold);font-weight:400;margin-bottom:5px}.day.today b{border-color:var(--gold);background:oklch(.25 .025 80)}.list-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);text-align:left;width:100%;min-height:58px}.list-row:last-child{border-bottom:0}.list-row svg{width:18px;color:var(--muted)}.list-row p{font-size:13px}.list-row small{font-size:10px}.package-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0}.package{padding:16px 4px;border:1px solid var(--border);border-radius:10px;text-align:center;background:var(--surface)}.package.selected{border-color:var(--gold);background:oklch(.24 .025 80)}.package b{display:block;font-size:19px;color:var(--gold);font-weight:600}.package span{display:block;font-size:11px;margin-top:6px}.profile{padding:16px 20px 24px}.profile .avatar{width:64px;height:64px}.vip{background:oklch(.25 .035 75);border:1px solid oklch(.45 .06 75);border-radius:14px;padding:19px;margin-bottom:18px}.vip h3{color:var(--gold);font-family:Georgia,var(--display);font-size:22px;letter-spacing:.04em}.vip p{font-size:12px;margin:5px 0 16px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;margin:24px 0}.stats b{display:block;font-size:23px}.stats small{font-size:11px}.code{font-family:Consolas,monospace;font-size:29px;letter-spacing:.1em;margin:16px 0}.chat-intro{text-align:center;padding:24px 20px}.chat-intro .avatar{width:76px;height:76px;margin:0 auto 10px}.chat-log{padding:0 16px 100px;display:flex;flex-direction:column;gap:16px}.bubble{align-self:flex-start;max-width:88%;border-radius:3px 14px 14px 14px;background:var(--surface);border:1px solid var(--border);padding:12px 14px;font-size:13px;line-height:1.8}.bubble.me{align-self:flex-end;border-radius:14px 3px 14px 14px;background:oklch(.33 .015 275)}.chat-input{position:absolute;bottom:0;background:var(--bg);width:100%;padding:12px 14px 26px;border-top:1px solid var(--border);display:flex;gap:8px}.chat-input input{width:100%;min-width:0;border:1px solid var(--border);background:var(--surface);color:var(--fg);border-radius:10px;padding:10px 12px}.chat-input button{padding:8px 13px}.player{height:535px;position:relative;background:var(--surface);overflow:hidden}.player img{height:100%;width:100%;object-fit:cover;filter:brightness(.55)}.player .player-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px}.playbutton{width:62px;height:62px;border:1px solid oklch(.9 0 0/.5);background:oklch(.1 0 0/.4);border-radius:50%;display:grid;place-items:center}.player-sub{position:absolute;bottom:72px;width:100%;text-align:center;padding:0 30px;font-size:17px;text-shadow:0 1px 4px black}.player-controls{position:absolute;bottom:15px;left:16px;right:16px;display:flex;justify-content:space-between;gap:5px}.player-controls button{min-height:44px;font-size:11px;padding:3px 8px;background:oklch(.1 0 0/.6);border-radius:7px}.progress{position:absolute;bottom:65px;left:20px;right:20px;height:2px;background:oklch(.6 0 0/.5)}.progress:before{content:'';display:block;width:var(--progress,25%);height:100%;background:var(--fg)}.episode-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}.episode-grid button{min-height:44px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:12px}.episode-grid button.selected{border-color:var(--accent);color:var(--fg)}.steps{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted);padding:6px 0 22px}.steps span.current{color:var(--fg)}.upload{border:1px dashed var(--muted);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;min-height:160px;width:100%;background:var(--surface);position:relative}.upload input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}.upload img{max-height:150px;width:auto;border-radius:8px}.task-circle{width:100px;height:100px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;margin:40px auto 28px;animation:spin 1.2s linear infinite}.task-circle.done{animation:none;border-color:var(--gold);display:grid;place-items:center}.task-circle.done svg{width:40px;height:40px;color:var(--gold)}@keyframes spin{to{transform:rotate(360deg)}}.center{text-align:center}.spacer{height:20px}.modal-layer{position:absolute;inset:0;z-index:30;background:oklch(.02 0 0/.75);display:flex;align-items:flex-end}.sheet{width:100%;background:oklch(.205 .009 275);border:1px solid var(--border);border-radius:24px 24px 0 0;padding:12px 22px 30px;max-height:85%;overflow:auto}.handle{width:32px;height:4px;background:var(--border);border-radius:3px;margin:0 auto 15px}.sheet h2{font-size:21px}.sheet p{color:var(--muted);font-size:13px;margin:10px 0 20px;line-height:1.8}.sheet .row{margin-bottom:12px}.sheet .primary{margin-top:12px}.toast{position:absolute;bottom:100px;left:24px;right:24px;background:var(--fg);color:var(--bg);padding:12px 16px;border-radius:10px;z-index:50;font-size:12px;text-align:center;box-shadow:0 8px 30px oklch(0 0 0/.3)}.empty{text-align:center;padding:35px 12px;color:var(--muted)}.toggle{height:25px;width:42px;background:var(--border);border-radius:20px;position:relative;min-height:25px}.toggle:after{content:'';position:absolute;left:3px;top:3px;width:19px;height:19px;background:white;border-radius:50%}.toggle.on{background:oklch(.42 .06 150)}.toggle.on:after{left:20px}.result-image{margin:20px auto;max-height:260px;max-width:100%;width:auto;border-radius:12px}.badge{font-size:10px;border:1px solid var(--border);padding:2px 6px;border-radius:4px;color:var(--muted)}
+@media(max-width:1100px){.review-note{display:none}.stage{padding:24px}.rail{width:205px;padding:30px 18px}.studio{grid-template-columns:205px 1fr}}@media(max-width:650px){.studio{display:block}.rail,.desk-head,.review-note{display:none}.stage{padding:0}.preview-area{margin:0;display:block}.phone{width:100%;height:100dvh;border:0;border-radius:0;box-shadow:none}.status{height:36px;padding-top:5px}.island{display:none}.screen{height:calc(100% - 36px)}.bottom-nav{padding-bottom:max(15px,env(safe-area-inset-bottom));height:78px}.hero{height:320px}.chat-input{padding-bottom:max(16px,env(safe-area-inset-bottom))}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+/* Homepage only: banner and four independent three-card sections. */
+.home-page .topbar{height:54px}
+.home-page .home-banner{display:block;position:relative;width:calc(100% - 40px);aspect-ratio:2/1;margin:0 20px;padding:0;border-radius:12px;overflow:hidden;text-align:left;background:var(--surface);isolation:isolate}
+.home-page .home-banner>img{width:100%;height:100%;object-fit:cover;object-position:center 50%;filter:brightness(.7)}
+.home-page .home-banner:after{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,oklch(.10 .008 275/.92),oklch(.10 .008 275/.18))}
+.home-page .home-banner-copy{position:absolute;left:16px;right:58px;bottom:17px;z-index:1;display:block}
+.home-page .home-banner-copy .kicker{font-size:10px;color:var(--fg)}
+.home-page .home-banner-title{display:block;font:600 27px/1.4 var(--display);letter-spacing:0;margin:4px 0}
+.home-page .home-banner-sub{font-size:11px;color:var(--fg);line-height:1.7}
+.home-page .home-banner-play{position:absolute;right:16px;bottom:21px;z-index:1;display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--muted);border-radius:50%;background:oklch(.12 .008 275/.8);color:var(--fg)}
+.home-page .home-banner-play svg{width:16px;height:16px}
+.home-page .home-banner:hover{box-shadow:0 0 0 1px var(--muted);color:var(--fg)}
+.home-page .home-sections{padding:0 20px 12px}
+.home-page .home-section{margin-top:17px}
+.home-page .home-section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-bottom:8px}
+.home-page .home-section-head h2{font-size:17px;line-height:1.4}
+.home-page .home-section-head button{min-height:44px;padding:0 0 0 10px;font-size:11px;color:var(--muted);border-radius:6px}
+.home-page .home-section-head button span{margin-left:4px;font-size:15px}
+.home-page .home-section-head button:hover{color:var(--fg);background:var(--surface)}
+.home-page .home-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
+.home-page .home-card{min-width:0;padding:0 0 5px;border-radius:9px;text-align:left;color:var(--fg)}
+.home-page .home-card-cover{position:relative;width:100%;aspect-ratio:1;overflow:hidden;border-radius:9px;background:var(--surface)}
+.home-page .home-card-cover>img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.home-page .home-card h3{font-size:12px;font-weight:550;line-height:1.6;margin-top:7px;overflow-wrap:anywhere}
+.home-page .home-card small{display:block;font-size:10px;margin-top:2px;line-height:1.5}
+.home-page .home-card:hover{background:var(--surface);color:var(--fg);box-shadow:0 0 0 2px var(--border)}
+.home-page .home-cover-mark{position:absolute;bottom:7px;right:7px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:oklch(.1 .008 275/.85);border:1px solid oklch(.7 .012 275/.5);color:var(--fg);box-shadow:0 2px 8px oklch(0 0 0/.3)}
+.home-page .home-cover-mark svg{width:12px;height:12px}
+.home-page .home-disclaimer{font-size:10px;line-height:1.8;color:var(--muted);margin-top:22px}
+
+/* Desktop layout only. Keep all original narrow-screen rules intact. */
+
+
+
+
+/* AI task history only; preserve existing phone and wide-screen layouts. */
+.face-history-entry{min-height:44px;padding:6px 8px;font-size:11px;color:var(--fg);border:1px solid var(--border);border-radius:8px;flex-shrink:0}
+.face-history-notice{padding:14px 16px;margin:8px 0 14px;background:oklch(.23 .045 24);border:1px solid oklch(.45 .09 24);border-radius:10px;color:var(--fg);font-size:13px;line-height:1.8}
+.face-history-help{display:block;margin-bottom:18px}
+.face-history-record{border:1px solid var(--border);border-radius:12px;padding:14px;background:var(--surface);margin-bottom:12px;min-width:0}
+.face-history-summary{display:flex;align-items:center;gap:12px}
+.face-history-thumb{width:64px;height:64px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.face-history-meta{min-width:0}.face-history-meta h3{font-size:13px;line-height:1.6;overflow-wrap:anywhere}.face-history-meta small{display:block;font-size:10px;line-height:1.8;margin-top:3px}
+.face-history-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}.face-history-actions>div{display:flex;gap:8px}.face-history-actions button{padding:8px 12px;font-size:12px;min-height:44px}
+
+
+/* NPC V1.2: scoped list/detail/chat additions only. */
+#npc-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px;width:100%;max-width:780px;margin:0 auto}
+#npc-results>.empty{grid-column:1/-1}
+.npc-browse-card{position:relative;min-width:0;aspect-ratio:3/4;border:1px solid var(--border);background:var(--surface);border-radius:12px;overflow:hidden}
+.npc-card-open{display:block;position:absolute;inset:0;width:100%;height:100%;text-align:left;padding:0;color:var(--fg);border-radius:11px}
+.npc-browse-photo{position:absolute;inset:0;background:var(--bg)}.npc-browse-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.npc-card-open:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,oklch(.08 .008 275/.55) 48%,oklch(.08 .008 275/.97) 100%)}
+.npc-browse-copy{position:absolute;left:12px;right:12px;bottom:43px;z-index:1}.npc-browse-copy h3{font-size:17px;line-height:1.4;margin:0 0 6px}.npc-browse-copy p{font-size:11px;line-height:1.7;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--fg)}
+.npc-card-bottom{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;gap:4px;z-index:1;pointer-events:none}.npc-card-bottom small{font-size:10px;line-height:1.6;color:var(--fg)}
+.npc-card-favorite{position:absolute;right:6px;top:6px;z-index:2;background:oklch(.10 .008 275/.85);border:1px solid var(--border);box-shadow:0 2px 8px oklch(0 0 0/.25)}.npc-card-favorite.is-favorite{color:var(--gold)}.npc-card-favorite:hover{background:oklch(.20 .008 275);color:var(--fg)}.npc-card-favorite.is-favorite:hover{color:var(--gold)}
+.npc-card-open:hover{color:var(--fg);box-shadow:inset 0 0 0 2px var(--muted)}.npc-card-open:focus-visible{outline-offset:-4px;z-index:1}
+.npc-recommendations{margin-top:32px}.npc-recommendations>h3{margin:0 0 16px}.npc-recommend-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px;width:100%;max-width:780px;margin:0 auto}
+.npc-detail-counts{display:flex;gap:36px;margin:18px 0 24px}.npc-detail-counts dt{font-size:12px;color:var(--muted)}.npc-detail-counts dd{font-size:22px;margin:4px 0 0;font-variant-numeric:tabular-nums}
+.npc-detail h2{margin:6px 0 8px}.npc-detail-cg{margin:20px 0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px}.npc-detail-cg img{max-height:380px;width:auto;height:auto;margin:auto;border-radius:8px}
+.screen[data-page="chat"]{display:flex;flex-direction:column;height:calc(100% - 45px);overflow:hidden;padding:0}
+.screen[data-page="chat"] .npc-chat-header{height:auto;min-height:74px;padding:8px 12px;flex-shrink:0;border-bottom:1px solid var(--border);gap:4px}
+.npc-chat-header .back-title{flex:1;min-width:0;gap:0}.npc-chat-header .back-title>div{min-width:0}.npc-chat-header .back-title h2{font-size:15px;line-height:1.5;overflow-wrap:anywhere}.npc-chat-header .back-title small{font-size:10px;display:block;line-height:1.6}.npc-chat-header>.row-start{gap:0;flex-shrink:0}
+.npc-chat-context{display:flex;align-items:center;gap:12px;padding:12px 16px;flex-shrink:0;background:var(--surface)}.npc-chat-context>button{width:64px;min-height:72px;padding:0;flex-shrink:0;border-radius:8px}.npc-chat-cg{height:72px;width:auto;margin:auto;object-fit:contain;border-radius:6px}.npc-chat-context>div{min-width:0}.npc-chat-context small{display:block;font-size:10px;line-height:1.8;margin-top:3px}
+.screen[data-page="chat"] .npc-chat-log{display:flex;flex-direction:column;flex:1;min-height:0;overflow:auto;padding:18px 14px 24px;gap:20px;scrollbar-width:thin}
+.npc-chat-empty{padding:20px 10px;text-align:center}.npc-chat-empty h3{font-size:18px}.npc-chat-empty p{font-size:12px;line-height:1.9;color:var(--muted);margin:12px auto;max-width:48ch}.npc-chat-empty small{font-size:11px}
+.npc-turn{display:flex;flex-direction:column;gap:18px}.npc-message{display:flex;flex-direction:column;gap:5px;min-width:0}.npc-message.user-message{align-items:flex-end}.npc-message.role-message{align-items:flex-start}.npc-speaker{font-size:11px;color:var(--muted)}.npc-message>.bubble{align-self:auto;max-width:92%;font-size:13px;line-height:1.8;min-width:36px}.npc-message-text{white-space:pre-wrap;overflow-wrap:anywhere}.npc-message>small{font-size:10px}
+.npc-message-image{display:block;max-height:220px;max-width:100%;height:auto;width:auto;border-radius:8px;margin-top:8px}.npc-message-tools{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;max-width:100%}.npc-message-tools small{font-size:10px;overflow-wrap:anywhere}.npc-message-tools button{font-size:11px;min-height:44px;padding:6px 8px;border:1px solid var(--border);border-radius:7px;display:inline-flex;align-items:center;gap:4px}.npc-message-tools svg{width:14px;height:14px}
+.screen[data-page="chat"] .npc-composer{position:static;flex-shrink:0;display:flex;flex-direction:column;width:100%;gap:6px;padding:10px 14px 20px;border-top:1px solid var(--border);max-height:48%;overflow:auto;background:var(--bg)}
+.npc-composer textarea{width:100%;min-height:62px;max-height:128px;resize:vertical;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--fg);font:13px/1.7 var(--body);padding:10px 12px}
+.npc-composer textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.npc-composer-options{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.npc-composer-options label{display:flex;align-items:center;gap:4px;min-height:44px;font-size:10px;color:var(--muted);cursor:pointer}.npc-composer-options input{width:15px;height:15px;accent-color:var(--accent)}
+.npc-composer-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px}.npc-composer-toolbar>.row-start{gap:4px}.npc-composer-toolbar>.small{font-size:9px}.npc-composer-toolbar .primary{min-width:64px;padding:8px 12px}
+.npc-attach{position:relative;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;cursor:pointer}.npc-attach input{position:absolute;inset:0;opacity:0;width:100%;height:100%;padding:0;cursor:pointer}.npc-attach:focus-within{outline:2px solid var(--gold);outline-offset:2px}.npc-tool-button{min-height:44px;min-width:44px;border:1px solid var(--border);border-radius:8px;padding:6px;font-size:11px}
+.npc-voice-chip{display:flex;align-items:center;flex-wrap:wrap;gap:5px;font-size:11px;background:var(--surface);padding:6px 8px;border-radius:8px}.npc-voice-chip button{min-height:44px;padding:4px 6px;font-size:10px}.npc-draft-preview:empty{display:none}.npc-draft-image{display:flex;align-items:center;gap:10px;margin-bottom:5px}.npc-draft-image img{max-width:90px;max-height:65px;width:auto;height:auto;border-radius:6px}.npc-draft-image button{min-height:44px;font-size:11px;border:1px solid var(--border);border-radius:6px}
+@media(max-width:650px){.screen[data-page="chat"]{height:calc(100% - 36px)}.screen[data-page="chat"] .npc-composer{padding-bottom:max(12px,env(safe-area-inset-bottom))}}
+
+
+/* Homepage face demos: two image layers with a soft left-to-right reveal. */
+.home-page .home-face-reveal{isolation:isolate}
+.home-page .home-face-reveal>img{position:absolute;inset:0;pointer-events:none}
+.home-page .home-face-reveal>.face-reveal-before{z-index:0}
+.home-page .home-face-reveal>.face-reveal-after{z-index:1;-webkit-mask-image:linear-gradient(90deg,#000 44%,transparent 56%);mask-image:linear-gradient(90deg,#000 44%,transparent 56%);-webkit-mask-size:300% 100%;mask-size:300% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:100% 0;mask-position:100% 0;animation:home-face-wipe 6.5s ease-in-out infinite;animation-delay:var(--reveal-delay,0s)}
+.home-page .home-face-reveal>.home-cover-mark{z-index:3}
+@keyframes home-face-wipe{
+ 0%,12%{-webkit-mask-position:100% 0;mask-position:100% 0;opacity:1}
+ 62%,82%{-webkit-mask-position:0% 0;mask-position:0% 0;opacity:1}
+ 100%{-webkit-mask-position:0% 0;mask-position:0% 0;opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.home-page .home-face-reveal>.face-reveal-after{animation:none;-webkit-mask-position:50% 0;mask-position:50% 0;opacity:1}}
+
+
+/* Home categories: persistent top tabs and one cover gallery at a time. */
+.home-page .home-sticky-header{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:4px}
+.home-page .home-feature-tabs{display:flex;padding:0 14px;border-bottom:1px solid var(--border);gap:4px}
+.home-page .home-feature-tab{position:relative;flex:1;min-width:0;min-height:52px;padding:10px 2px 14px;display:flex;align-items:center;justify-content:center;gap:5px;color:var(--muted);font-size:12px;white-space:nowrap;border-radius:6px 6px 0 0}
+.home-page .home-feature-tab svg{width:17px;height:17px}
+.home-page .home-feature-tab.selected{color:var(--fg);font-weight:600}
+.home-page .home-feature-tab.selected:after{content:'';position:absolute;bottom:-1px;left:22%;right:22%;height:3px;border-radius:3px;background:var(--accent)}
+.home-page .home-sections{display:block;padding:16px 16px 12px}
+.home-page .home-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+.home-page .home-card-cover{aspect-ratio:2/3;border-radius:10px}
+.home-page .home-card h3{font-size:14px;margin-top:9px}
+.home-page .home-card small{font-size:11px}
+.home-page .home-template-label{position:absolute;top:9px;left:9px;z-index:3;background:oklch(.10 .008 275/.8);border:1px solid #ffffff24;padding:2px 7px;border-radius:5px;font-size:10px;color:var(--fg)}
+.home-page .home-poster-title{position:absolute;bottom:0;left:0;right:0;padding:40px 12px 16px;background:linear-gradient(transparent,#000c);font:600 24px/1.4 var(--display)}
+.home-page .home-view-all{width:100%;min-height:46px;margin-top:24px;border:1px solid var(--border);border-radius:9px;color:var(--muted);font-size:12px}
+.home-page .home-disclaimer{margin-top:18px}
+@media(max-width:360px){.home-page .home-feature-tabs{padding:0 8px;gap:0}.home-page .home-feature-tab{gap:3px;font-size:11px}.home-page .home-feature-tab svg{width:15px;height:15px}}
+
+
+
+/* Short drama discovery, shared by the home tab and the theatre entry. */
+.drama-discovery{--drama-red:#ff3259;--drama-blue:#3edbff;background:#101012;color:#fff;overflow:hidden;border-radius:14px}
+.home-page .home-sections:has(.drama-discovery){padding:0 0 12px}
+.home-page .home-sections:has(.drama-discovery)>.home-disclaimer{padding:0 16px}
+.drama-feature{position:relative;min-height:310px;isolation:isolate;background:#08090b}
+.drama-feature-art{position:absolute;inset:0;width:100%;height:100%;padding:0;z-index:-2}
+.drama-feature-art img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:brightness(.55) saturate(.6)}
+.drama-feature:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0009,transparent 45%,#101012),linear-gradient(90deg,#0008,transparent)}
+.drama-feature-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0;gap:12px}
+.drama-feature-top h2{font-size:26px;font-style:italic;line-height:1.1;font-weight:800}
+.drama-feature-top h2>span{display:block;font-size:8px;letter-spacing:.18em;font-style:normal;margin-top:5px}
+.drama-feature-top>div{display:flex;gap:6px}.drama-feature-top .iconbtn svg{width:25px;height:25px}.drama-reward{color:#ffbd70}
+.drama-categories{display:flex;gap:24px;overflow:auto;scrollbar-width:none;padding:10px 18px 0}.drama-categories button{flex-shrink:0;min-height:44px;padding:4px 0 10px;color:#b7b5b9;font-size:15px;font-weight:600;position:relative}
+.drama-categories button.selected{color:#fff}.drama-categories button.selected:after{content:'';position:absolute;left:0;right:0;bottom:4px;height:3px;border-radius:4px;background:var(--drama-red)}
+.drama-feature-copy{padding:28px 22px 34px;pointer-events:none;max-width:85%}.drama-feature-kicker{font-size:8px;letter-spacing:.16em;color:#d0cbd1}.drama-feature-copy h3{font-size:36px;font-weight:700;line-height:1.3;margin:8px 0 4px;letter-spacing:.02em}.drama-feature-copy>p{font-size:10px;letter-spacing:.16em;color:#e1dce2}
+.drama-watch{pointer-events:auto;display:inline-flex;align-items:center;gap:8px;background:#fff;color:#111;border-radius:6px;font-size:12px;font-weight:600;min-height:38px;padding:7px 12px;margin-top:20px}.drama-watch svg{width:13px;height:13px}.drama-watch>span{padding-left:7px;border-left:1px solid #bbb;font-size:10px;font-weight:400}
+.drama-feature-pager{position:absolute;bottom:13px;left:22px;display:flex;gap:5px}.drama-feature-pager i{width:4px;height:4px;border-radius:4px;background:#ffffff55}.drama-feature-pager i:first-child{width:18px;background:var(--drama-red)}
+.drama-section-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.drama-section-heading h2{font-size:20px;line-height:1.4;font-weight:700;color:var(--drama-red)}.drama-section-heading h2>span{font-size:9px;letter-spacing:.08em;margin-left:8px;font-weight:600;vertical-align:middle;opacity:.75}.drama-section-heading>button{color:var(--drama-red);font-size:12px;min-height:44px;padding:0 2px}.drama-section-heading>small{font-size:10px}
+.drama-new{padding:12px 18px 0}.drama-new .drama-section-heading h2{color:var(--drama-blue);text-shadow:0 0 18px #00b7ff80}.drama-new-track{display:flex;gap:13px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;padding-bottom:5px}.drama-new-track::-webkit-scrollbar{display:none}.drama-new-card{flex:0 0 43%;padding:0;text-align:left;border-radius:12px;scroll-snap-align:start;min-width:0}.drama-new-cover{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;isolation:isolate;background:#242428}.drama-new-cover>img{width:100%;height:100%;object-fit:cover;object-position:center 35%}.drama-new-badge{position:absolute;top:8px;left:8px;background:#ff3259;padding:2px 6px;border-radius:4px;color:white;font-size:9px}.drama-new-cover>div{position:absolute;left:0;right:0;bottom:0;padding:32px 12px 12px;background:linear-gradient(transparent,#000e)}.drama-new-cover h3{font-size:20px;line-height:1.35;color:#fff;font-weight:700}.drama-new-cover small{font:8px/1.4 Georgia,serif;letter-spacing:.06em;color:#eee}.drama-new-cover p{font-size:9px;color:#dedade;margin-top:5px}
+.drama-ranking{padding:22px 18px 16px}.drama-ranking-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:column;grid-template-rows:repeat(3,auto);gap:16px 14px}.drama-rank-card{display:flex;align-items:stretch;gap:8px;padding:0;text-align:left;min-width:0;border-radius:8px}.drama-rank-cover{position:relative;width:61px;aspect-ratio:3/4;flex-shrink:0;overflow:hidden;border-radius:7px}.drama-rank-cover>img{width:100%;height:100%;object-fit:cover}.drama-rank-number{position:absolute;top:4px;left:4px;font-size:10px;font-weight:800;line-height:22px;width:22px;height:22px;text-align:center;color:#fff;background:#2229;border-radius:7px 7px 12px 7px}.drama-rank-number.rank-1{background:#ff3259}.drama-rank-number.rank-2{background:#ff8934}.drama-rank-number.rank-3{background:#e9b63e}.drama-rank-info{min-width:0;flex:1;padding:1px 0}.drama-rank-info h3{font-size:11px;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.drama-rank-meta{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:4px 0 7px}.drama-rank-meta>span{font-size:9px;color:#ff784a}.drama-rank-meta>small{font-size:8px;line-height:1.5;background:#ffffff1c;border-radius:3px;padding:0 3px;color:#eee}.drama-rank-info>p{font-size:9px;line-height:1.6;color:#b9b5bc;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.drama-chart-note{color:#77737f;text-align:center;font-size:9px;margin-top:20px}
+
+
+
+/* Personal drama tabs share the discovery header and responsive gallery. */
+.drama-personal-header{background:#151517;border-bottom:1px solid var(--border);padding-bottom:4px}
+.drama-personal-content{padding:20px 18px 28px;min-height:350px}
+.drama-personal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+.drama-personal-card{min-width:0;padding:0;text-align:left;border-radius:10px}
+.drama-personal-card .drama-new-cover{aspect-ratio:2/3}
+.drama-personal-card>h3{font-size:14px;margin-top:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.drama-personal-card>small{display:block;font-size:11px;margin:3px 0;color:var(--muted)}
+.drama-personal-cta{display:flex;align-items:center;gap:6px;font-size:11px;color:#ff728d;margin-top:8px;min-height:30px}
+.drama-personal-cta svg{width:12px;height:12px}
+.drama-personal-empty{text-align:center;padding:52px 16px 40px;color:var(--muted)}
+.drama-personal-empty>svg{width:44px;height:44px;stroke-width:1.2;margin-bottom:16px;color:#77737f}
+.drama-personal-empty h3{font-size:17px;color:var(--fg)}
+.drama-personal-empty p{font-size:12px;line-height:1.9;max-width:260px;margin:12px auto 24px}
+@media(max-width:650px){.drama-categories{gap:0;justify-content:space-between;padding-left:18px;padding-right:18px}.drama-categories button{font-size:14px}}
+
+
+
+/* V1.4: template labels and compact face upload only. */
+.face-template-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.face-template-tags span{display:inline-block;font-size:10px;line-height:1.6;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:1px 6px}
+.face-template-preview{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface)}
+.face-template-stage{position:relative;height:260px;background:var(--bg)}
+.face-template-image{width:100%;height:100%;object-fit:contain}
+.face-template-stage button{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:44px;border-radius:22px;background:rgba(0,0,0,.65);color:white;font-size:32px;line-height:1;border:1px solid rgba(255,255,255,.25)}
+.face-template-prev{left:10px}.face-template-next{right:10px}
+.face-template-caption{padding:12px 16px}
+.face-photo-control{margin:16px 0 20px;text-align:center}
+.face-photo-control button{display:flex;align-items:center;justify-content:center;gap:8px}
+.face-photo-hint{display:block;margin-top:10px}
+.face-photo-selected{width:64px;height:64px;object-fit:cover;border-radius:10px;margin:0 auto 12px}
+/* Secondary tags filter the template list for each face type. */
+.face-filter-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 0;max-width:100%}
+.face-filter-tabs::-webkit-scrollbar{display:none}
+.face-filter-tab{flex:0 0 auto;min-height:34px;padding:5px 13px;border:1px solid var(--border);border-radius:18px;color:var(--muted);font-size:12px;white-space:nowrap}
+.face-filter-tab.selected{color:var(--fg);border-color:var(--accent);background:var(--surface)}
+.home-page .face-filter-tabs{padding:10px 14px 6px}
+
+.face-related{margin-top:24px}.face-related>h3{margin-bottom:12px}
+.favorite-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:6px 10px;border:1px solid var(--border);border-radius:8px;font-size:12px;white-space:nowrap}
+.favorite-button.selected{color:var(--gold)}
+.favorite-button.selected svg{fill:currentColor}
+.player-favorite{position:absolute;right:16px;bottom:110px;z-index:2;flex-direction:column;background:rgba(0,0,0,.45);color:white;border-color:rgba(255,255,255,.3);min-width:56px;padding:10px 8px}
+.player-favorite svg{width:26px;height:26px}
+/* Short drama player follows the supplied playback reference. */
+.screen[data-page="player"]{display:block;max-width:480px;margin:auto;padding:0;overflow:hidden;background:#000}
+.screen[data-page="player"]>.reference-player{width:100%;height:100%;aspect-ratio:auto;border-radius:0;background:#000;color:#fff}
+.reference-player button:hover{background:rgba(255,255,255,.06);color:inherit}
+.reference-play-surface{position:absolute;inset:48px 64px 58px 0;display:grid;place-items:center;padding:0;background:#000}
+.reference-play-surface #play-toggle{opacity:0;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:1px solid #ffffff66;background:#ffffff12;font-size:22px}
+.reference-play-surface:hover #play-toggle,.reference-play-surface:focus-visible #play-toggle{opacity:1}
+.reference-player-top{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:7px;height:48px;padding:0 10px 0 0;z-index:2}
+.reference-player-top>button{padding:0;min-width:32px;height:42px;display:flex;align-items:center;justify-content:center}
+.reference-player-top svg{width:23px;height:23px;stroke-width:2}
+.reference-top-divider{width:1px;height:14px;background:#666;margin-right:3px}
+.reference-player-top h2{font-family:Arial,sans-serif;font-size:23px;font-weight:800;font-style:italic;white-space:nowrap;line-height:1}
+.reference-player-top .reference-speed{margin-left:auto;gap:4px;font:bold italic 20px/1 Arial,sans-serif}
+.reference-speed svg{width:27px;height:27px}
+.reference-player-actions{position:absolute;right:9px;bottom:94px;display:flex;flex-direction:column;align-items:center;gap:20px;z-index:2}
+.reference-player-actions button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:0;font-size:13px;line-height:1.2;color:#fff}
+.reference-player-actions svg{width:28px;height:28px;stroke-width:2}
+.reference-player-actions button.active svg{fill:var(--gold);color:var(--gold)}
+.reference-player-bottom{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;gap:8px;height:54px;padding:0 9px 0 0;background:#000;z-index:2}
+.reference-episodes{flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:8px;height:48px;background:#1c1c1c;border-radius:0 5px 0 0;padding:0 12px;font-size:15px;text-align:left}
+.reference-episodes svg{width:23px;height:23px}
+.reference-fullscreen{width:42px;height:44px;padding:0;display:grid;place-items:center}
+.reference-fullscreen svg{width:27px;height:27px}
+.reference-player .reference-progress{bottom:56px;left:0;right:0;opacity:0}
+.reference-player:has(.reference-play-surface:hover) .reference-progress{opacity:.65}
+.reference-player:fullscreen{width:100vw!important;height:100dvh!important;max-width:none!important;border-radius:0}
+.reference-comments{max-height:260px;overflow:auto}
+@media(max-width:360px){.reference-player-top{gap:3px}.reference-player-top h2{font-size:20px}.reference-player-top .reference-speed{font-size:18px}}
+.reference-player-top .reference-top-divider,.reference-player-top>button[aria-label="返回首页"],.reference-player-top h2,.reference-player-top .reference-speed{display:none}
+
+.redeem-sheet{padding:14px 22px 26px;border-radius:20px 20px 0 0}
+.redeem-sheet>.row{margin-bottom:18px}
+.redeem-sheet h2{font-size:18px}
+.redeem-sheet .redeem-help{font-size:11px;margin:10px 0;color:var(--muted)}
+.redeem-error{min-height:20px;font-size:12px;color:var(--accent);margin:4px 0 12px}
+.redeem-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.redeem-actions .primary{margin:0}
+.modal-layer:has(.redeem-sheet){align-items:flex-end;padding:0}
+.settings-menu .list-row{border:0;min-height:76px;padding:22px 4px;font-size:18px}
+.face-filter-tabs{cursor:grab;user-select:none}.face-filter-tabs.dragging,.face-filter-tabs.dragging button{cursor:grabbing}
+
+.screen[data-page="login"]{max-width:560px;margin:auto}
+.auth-page .topbar{padding:0 12px;height:52px;justify-content:flex-start}
+.auth-content{max-width:430px;margin:auto;padding:8px 24px 32px}
+.auth-content>.brand{margin:8px 0 20px}.auth-content h1{font-size:27px;margin-bottom:24px}
+.auth-mode{display:flex;gap:28px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.auth-mode button{font-size:17px;color:var(--muted);padding:0 0 10px;border-bottom:2px solid transparent}
+.auth-mode button.selected{color:var(--fg);border-color:var(--accent)}
+.auth-method{display:flex;gap:8px;margin-bottom:16px}
+.auth-method button{padding:6px 16px;border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--muted)}
+.auth-method button.selected{color:var(--fg);border-color:var(--accent);background:var(--surface)}
+.auth-field{display:block;margin:14px 0}.auth-field>span{display:block;font-size:13px;margin-bottom:7px}
+.auth-field input{width:100%;min-width:0;height:46px;padding:0 12px;border:1px solid var(--border);border-radius:9px;color:var(--fg);background:var(--surface)}
+.auth-code-field{display:flex;gap:8px}.auth-code-field button{flex-shrink:0;border:1px solid var(--border);border-radius:9px;padding:0 12px;color:var(--gold);font-size:12px}
+.auth-gender{border:0;padding:0;margin:18px 0}.auth-gender legend{font-size:13px;margin-bottom:9px}
+.auth-gender>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.auth-gender label{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 6px;border:1px solid var(--border);border-radius:9px;font-size:13px;cursor:pointer}
+.auth-gender label:has(input:checked){border-color:var(--accent);background:var(--surface)}
+.auth-gender input{accent-color:var(--accent);margin:0}
+.auth-agreement{display:flex;gap:7px;align-items:flex-start;margin-top:18px;font-size:11px;color:var(--muted)}
+.auth-agreement>input{margin:4px 0 0;accent-color:var(--accent)}.auth-agreement button{padding:0;color:var(--fg);font-size:11px;min-height:24px}
+.auth-error{min-height:20px;color:var(--accent);font-size:12px;margin:8px 0}
+.auth-third-party{margin-top:24px;text-align:center}.auth-third-party p{color:var(--muted);font-size:12px;margin-bottom:12px}
+.auth-third-party>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.auth-third-party button{padding:8px 4px;font-size:12px}
+.auth-demo-note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:18px}
+.auth-profile-login{font-size:20px;font-weight:600;padding:6px 0}
+.auth-signout{font-size:11px;color:var(--muted);padding:2px 0;display:block}
+.purchase-orders{min-width:0}.purchase-order .row h3{min-width:0}#screen[data-page="orders"] .chips{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px}#screen[data-page="orders"] .chip{flex-shrink:0;padding-left:12px;padding-right:12px}.purchase-order{display:block;width:100%;text-align:left;min-width:0}.purchase-order .row{gap:12px;margin-bottom:10px}.purchase-order h3{overflow-wrap:anywhere}.purchase-order p{overflow-wrap:anywhere;margin:8px 0}.purchase-order .row:last-child{margin-bottom:0}.purchase-order-details{margin:18px 0 24px}.purchase-order-details>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px solid var(--border)}.purchase-order-details dt{color:var(--muted);font-size:12px}.purchase-order-details dd{margin:0;text-align:right;overflow-wrap:anywhere;font-size:13px}
+</style>
+<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/short.css">
+<script src="assets/short/catalog.js"></script>
+<script src="assets/short.js"></script>
+<link rel="stylesheet" href="assets/face-workspace.css">
+<script src="assets/face-workspace.js"></script>
+<link rel="stylesheet" href="assets/search.css">
+<script src="assets/search.js"></script>
+<link rel="stylesheet" href="assets/creations.css">
+<script src="assets/creations.js"></script>
+<link rel="stylesheet" href="assets/experience.css">
+<script src="assets/experience.js"></script>
+<link rel="stylesheet" href="assets/distribution.css">
+<script src="assets/distribution.js?v=20261106-static"></script>
+</head>
+<body>
+<div class="studio">
+<aside class="rail" data-od-id="review-navigation"><div class="brand"><span class="logo">h</span>红果娱乐</div><div class="eyebrow">Hongguo entertainment</div><p class="rail-label">APP 体验 / 页面预览</p><nav id="desktop-nav" aria-label="App 页面预览"></nav><div class="rail-foot"><span class="badge">APP PREVIEW</span><br>移动端交互预览 · 中文版<br>面向海外市场 · 本地模拟<br><a href="admin.html" target="_blank" rel="noopener">运营管理后台 ↗</a></div></aside>
+<main class="stage"><header class="desk-head"><div><h1 data-od-id="prototype-heading">海外红果娱乐</h1><p>探索好故事，也成为故事的一部分。</p></div><span class="pill">APP DESIGN · 交互预览</span></header><div class="preview-area"><div class="phone" id="phone"><div class="status"><span>9:41</span><div class="island"></div><span class="status-icons" id="status-icons"></span></div><div id="screen" class="screen"></div><nav id="bottom-nav" aria-label="App 主导航" class="bottom-nav" data-od-id="app-bottom-navigation"></nav><div id="overlay"></div><div id="toast-host" aria-live="polite"></div></div><aside class="review-note" id="review-note"></aside></div></main></div>
+<script>
+const icons={home:'<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',npc:'<path d="M21 11a8 8 0 0 1-8 8H7l-5 3 1-7a8 8 0 1 1 18-4Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/>',coin:'<circle cx="12" cy="12" r="9"/><path d="M15 8h-5a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H9m3-10v12"/>',user:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',back:'<path d="m14 5-7 7 7 7"/>',arrow:'<path d="m9 5 7 7-7 7"/>',search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>',play:'<path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/>',heart:'<path d="M20 5c-3-3-7-1-8 2-1-3-5-5-8-2-5 5 3 11 8 15 5-4 13-10 8-15Z"/>',image:'<rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="9" cy="8" r="2"/><path d="m3 17 6-5 4 3 4-4 4 5"/>',video:'<rect x="2" y="5" width="14" height="14" rx="3"/><path d="m16 9 6-4v14l-6-4"/>',plus:'<path d="M12 4v16M4 12h16"/>',check:'<path d="m5 12 4 4 10-10"/>',more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>',gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8C4 8 4 1 8 3c3 1 4 5 4 5Zm0 0c8 0 8-7 4-5-3 1-4 5-4 5Z"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/>',signal:'<path d="M3 18v-3m5 3v-6m5 6V8m5 10V4"/>',battery:'<rect x="2" y="6" width="18" height="12" rx="3"/><path d="M23 10v4M5 9h12v6H5Z"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="m9 3 6 0 1 4 4 1v7l-4 1-1 5H9l-1-5-4-1V8l4-1Z"/>'};
+Object.assign(icons, {
+order:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+users:'<circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 5a3 3 0 0 1 0 6M22 21v-2a7 7 0 0 0-4-6"/>',
+ticket:'<path d="M3 7h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4Z"/><path d="M15 7v2m0 4v2m0 2v2"/>',
+globe:'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>'
+});
+const I=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.arrow}</svg>`;
+const $=s=>document.querySelector(s);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const seed={coins:1280,checkin:'',streak:0,favs:[],faceFavs:[],history:[],unlocked:[],vip:false,orders:[],task:null,faceTasks:[],ledger:[{title:'新用户演示金币',amount:1280,date:'初始化 · 示例入账'}],messages:{},language:'简体中文'};
+let state;try{state=Object.assign({},seed,JSON.parse(localStorage.getItem('hongguo-demo-v1')||'{}'))}catch{state=structuredClone(seed)}
+let page='home',stack=[],dramaId=0,characterId=0,episode=1,faceType='image',template=0,facePhoto='',faceStep=1,filter='全部',query='',npcFilter='全部',playing=false,chatTimer=null,chatBusy=false,selectedPack=1,toastTimer,playerTimer=null;let dramaSort='hot'; let speed=1,quality='高清',subtitle=true,muted=false,autoNext=state.autoplay!==false;
+const dramas=[{name:'午夜来信',en:'LETTERS AFTER DARK',img:'city',genre:'悬疑',region:'欧美',eps:36,lang:'英语',desc:'一封没有署名的来信，让独居纽约的翻译师艾琳卷入一场关于记忆的谜局。每到午夜，新的线索就会出现。而寄信的人，似乎比她更了解自己。',role:0},{name:'只在日落时爱你',en:'UNTIL THE SUN SETS',img:'romance',genre:'爱情',region:'欧美',eps:48,lang:'英语',desc:'摄影师诺亚与离乡多年的旅人，在同一座海边小城重逢。他们约定只谈今天，却发现过去从未离开。',role:1},{name:'她的第二人生',en:'THE OTHER SIDE',img:'noir',genre:'都市',region:'亚洲',eps:40,lang:'中文',desc:'离开熟悉的一切之后，林夏在一座陌生城市重新开始。从不被看见，到由自己定义人生。',role:2},{name:'深海回声',en:'ECHOES BELOW',img:'hero',genre:'悬疑',region:'欧美',eps:24,lang:'英语',desc:'失联的海洋观测站传来一段声音，年轻研究员决定重返那片改变她人生的海。',role:0}];
+dramas.push(
+ {name:'契约之外',en:'BEYOND THE PROMISE',img:'woman',genre:'爱情',region:'欧美',eps:32,lang:'英语',desc:'一份限时婚约，让两位原本毫无交集的人住进同一个屋檐。当约定即将到期，真正的心意才刚刚开始。',role:0},
+ {name:'他的隐藏身份',en:'A HIDDEN LIFE',img:'man',genre:'都市',region:'欧美',eps:42,lang:'英语',desc:'重返故乡的青年隐去自己的过去，想从普通生活重新开始。一场突如其来的重逢，让平静的日常有了新的答案。',role:1}
+);
+initShortCatalog();
+const characters=[{name:'艾琳',en:'ELENA',img:'woman',title:'午夜来信 · 神秘翻译师',desc:'每一个秘密，都值得被温柔听见。',reply:'有时候，答案就藏在我们忽略的细节里。告诉我，你最在意的是那封信，还是寄信的人？'},{name:'诺亚',en:'NOAH',img:'man',title:'只在日落时爱你 · 摄影师',desc:'收藏日落，也认真倾听你。',reply:'那我们慢慢说。比起完美的答案，我更想听见你真实的感受。此刻，你最想去哪里？'},{name:'林夏',en:'XIA',img:'noir',title:'她的第二人生 · 独立设计师',desc:'重新开始，永远不算太迟。',reply:'我也曾经这样犹豫。先走出一小步吧，新的故事常常就从这里开始。你愿意和我一起试试吗？'},{name:'沈知远',img:'man',title:'旧书店的灯 · 书店店主',desc:'留一盏灯，等你讲完今天的故事。',reply:'我会认真听。你说的这段经历，让我想起书页间留下的便签。你愿意再说说其中最难忘的细节吗？'},{name:'许晴',img:'woman',title:'雨后电台 · 电台主持人',desc:'把心事说出来，让雨声陪你慢慢梳理。',reply:'谢谢你愿意分享。我听见了你的在意，也理解这份犹豫。我们可以从眼下最想解决的一件小事聊起。'}];
+const img=(name,alt,cls='')=>`<img class="${cls}" src="assets/${name}.jpg" alt="${alt}" loading="lazy">`;
+const save=()=>localStorage.setItem('hongguo-demo-v1',JSON.stringify(state));
+function toast(t){clearTimeout(toastTimer);$('#toast-host').innerHTML=`<div class="toast" role="status">${esc(t)}</div>`;toastTimer=setTimeout(()=>$('#toast-host').innerHTML='',2800)}
+function earn(amount,title){state.coins+=amount;state.ledger.unshift({id:'HG-XF-'+crypto.randomUUID(),title,amount,at:Date.now(),date:new Date().toLocaleString('zh-CN')});save()}
+function navigationSnapshot(){return {page,characterId,scroll:$('#screen').scrollTop,query,filter,npcFilter,dramaCategory,dramaSort,shortCategory,shortBanner,searchScope,selectedTaskId,shortTracks:shortTrackSnapshot(),faceStep,faceType,template}}
+function go(p,returning=false,npcOrigin=null){
+ if(p==='invite'){openDistributorInvite();return}
+ if(chatBusy)stopChat(false);
+ if(!returning)stack.push({...navigationSnapshot(),...(npcOrigin||{})});
+ if(page==='player'&&p!=='player'){playing=false;clearInterval(playerTimer)}
+ closeModal(false);page=p;query='';filter='全部';render();$('#screen').scrollTop=0;
+}
+function back(){
+ const previous=stack.pop()||{page:'home',scroll:0};
+ if(chatBusy)stopChat(false);
+ if(page==='player'){playing=false;clearInterval(playerTimer)}
+ closeModal(false);page=typeof previous==='string'?previous:previous.page;
+ if(typeof previous==='object'){
+  characterId=previous.characterId??characterId;query=previous.query??'';filter=previous.filter??'全部';
+  npcFilter=previous.npcFilter??npcFilter;dramaCategory=previous.dramaCategory??dramaCategory;dramaSort=previous.dramaSort??dramaSort;
+  searchScope=previous.searchScope??searchScope;selectedTaskId=previous.selectedTaskId??null;
+  shortCategory=previous.shortCategory??shortCategory;shortBanner=previous.shortBanner??shortBanner;
+  faceStep=previous.faceStep??faceStep;faceType=previous.faceType??faceType;template=previous.template??template;
+ }
+ render();shortRestoreTracks(previous.shortTracks);$('#screen').scrollTop=previous.scroll||0;
+}
+const tabPositions={};
+function tab(p){tabPositions[page]=$('#screen').scrollTop;stack=[];go(p,true);$('#screen').scrollTop=tabPositions[p]||0}
+function bar(title,action=''){return `<header class="topbar" data-od-id="${page}-header"><div class="back-title"><button class="iconbtn" onclick="back()" aria-label="返回">${I('back')}</button><h2 data-od-id="${page}-title">${title}</h2></div>${action}</header>`}
+function heading(title,action='',fn=''){return `<div class="section-head"><h2>${title}</h2>${action?`<button onclick="${fn}">${action} ›</button>`:''}</div>`}
+function poster(d,i){if(d.sourceId)return shortCard(d,i);return `<button class="poster-card" data-od-id="drama-card-${i}" onclick="openDrama(${i})"><div class="poster">${img(d.img,d.name+'虚构剧集氛围封面')}<span class="tag">${d.genre} · 16+</span><div class="poster-title">${d.name}</div></div><h3>${d.name}</h3><small>${d.lang} · 全${d.eps}集 · 已完结</small></button>`}
+let homeFeature='image';
+const homeFeatures=[['image','图片换脸','image'],['video','视频换脸','video'],['drama','短剧','play'],['npc','智能对话','npc']];
+function switchHomeFeature(feature,focus=false){
+ if(!homeFeatures.some(([id])=>id===feature))return;
+ homeFeature=feature;render();$('#screen').scrollTop=0;
+ if(focus)document.querySelector('#home-tab-'+feature).focus({preventScroll:true});
+}
+function homeTabKey(event,feature){
+ const index=homeFeatures.findIndex(([id])=>id===feature);
+ let next=index;
+ if(event.key==='ArrowRight')next=(index+1)%homeFeatures.length;
+ else if(event.key==='ArrowLeft')next=(index+homeFeatures.length-1)%homeFeatures.length;
+ else if(event.key==='Home')next=0;
+ else if(event.key==='End')next=homeFeatures.length-1;
+ else return;
+ event.preventDefault();switchHomeFeature(homeFeatures[next][0],true);
+}
+function openHomeTemplate(type,index=0){openFace(type);template=index;faceStep=2;render()}
+function home(){
+ const isFace=['image','video'].includes(homeFeature);
+ const features={
+  image:{eyebrow:'AI CREATIVE STUDIO',title:'这一幕，<br>你是主角。',desc:'一张照片，开启另一种可能',image:'woman',cta:'开启主角体验',action:"openHomeTemplate('image')",section:'灵感模板',note:'找到属于你的风格'},
+  video:{eyebrow:'YOUR MOMENT IN MOTION',title:'让想象，<br>动起来。',desc:'把你的主角时刻，变成一段故事',image:'noir',cta:'探索视频模板',action:"openHomeTemplate('video')",section:'动态灵感',note:'为每一帧心动'},
+  npc:{eyebrow:'BEYOND THE STORY',title:'故事之外，<br>也想听你说。',desc:'选一个角色，开启你们的专属对话',image:'man',cta:'遇见故事中的人',action:'openNpcDetail(0)',section:'等你开场',note:'每一次对话，都是新故事'}
+ };
+ const f=features[homeFeature];
+ let cards='';
+ if(isFace)cards=filteredFaceTemplates(homeFeature).map(({item:{title,image,tags,videoSeconds},index:i})=>`<button class="home-card" data-od-id="home-${homeFeature}-card-${i}" onclick="openHomeTemplate('${homeFeature}',${i})"><div class="home-card-cover home-face-reveal" style="--reveal-delay:-${i*.8+(homeFeature==='video'?.4:0)}s">${img(image,title+'过渡前演示图片','face-reveal-before')}${img(['noir','hero','woman','romance'][i%4],title+'过渡后演示图片','face-reveal-after')}<span class="home-template-label">${homeFeature==='video'?videoSeconds+'s · 视频':'人气模板'}</span><span class="home-card-action" aria-hidden="true"><span class="template-action-default">${I(homeFeature==='video'?'play':'plus')}</span><span class="template-action-use"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span></div><div class="home-card-caption"><h3>${title}</h3>${I('arrow')}</div>${faceTemplateTags(tags)}<small><b>${homeFeature==='video'?videoSeconds*25:80} 金币</b> / 次</small></button>`).join('');
+ else if(homeFeature==='npc')cards=characters.map((c,i)=>`<button class="home-card" data-od-id="home-npc-${i}" onclick="openNpcDetail(${i})"><div class="home-card-cover">${img(c.img,c.name+'虚构角色氛围头像')}<span class="home-template-label"><i class="online" aria-hidden="true"></i> 等你来聊</span><span class="home-card-action" aria-hidden="true">${I('npc')}</span></div><div class="home-card-caption"><h3>${c.name}</h3>${I('arrow')}</div><small>${c.desc}</small></button>`).join('');
+ const allAction=isFace?`openFace('${homeFeature}')`:"go('npc')";
+ return `<div class="home-page" data-od-id="home-page"><div class="home-sticky-header"><header class="topbar"><div class="brand"><span class="logo">h</span>红果娱乐</div><div class="app-header-actions"><button class="app-balance" onclick="tab('coins')" aria-label="金币余额 ${state.coins}，前往金币中心">${I('coin')}${state.coins.toLocaleString()}</button><button class="iconbtn" onclick="openGlobalSearch()" aria-label="全局搜索">${I('search')}</button></div></header><nav class="home-feature-tabs" role="tablist" aria-label="首页功能切换">${homeFeatures.map(([id,label,icon])=>`<button id="home-tab-${id}" class="home-feature-tab ${homeFeature===id?'selected':''}" data-od-id="home-tab-${id}" role="tab" aria-selected="${homeFeature===id}" aria-controls="home-feature-panel" tabindex="${homeFeature===id?'0':'-1'}" onclick="switchHomeFeature('${id}',true)" onkeydown="homeTabKey(event,'${id}')">${I(icon)}<span>${label}</span></button>`).join('')}</nav></div><div id="home-feature-panel" role="tabpanel" aria-labelledby="home-tab-${homeFeature}" tabindex="0">${homeFeature==='drama'?shortDiscovery(true):`<section class="app-feature" aria-label="${homeFeatures.find(([id])=>id===homeFeature)[1]}精选推荐"><img src="assets/${f.image}.jpg" alt="" fetchpriority="high"><div class="app-feature-copy"><span class="feature-eyebrow">${I(isFace?'image':'npc')}${f.eyebrow}</span><h2>${f.title}</h2><p>${f.desc}</p><button class="primary" data-od-id="home-feature-cta" onclick="${f.action}">${f.cta}${I('arrow')}</button></div><span class="feature-index">0${homeFeatures.findIndex(([id])=>id===homeFeature)+1} / 04</span></section><div class="home-sections"><div class="home-feed-heading"><h2>${f.section}</h2><span>${f.note}</span></div>${isFace?faceTagFilters(homeFeature):'<div class="spacer"></div>'}<div class="home-card-grid">${cards}</div><button class="home-view-all" onclick="${allAction}">探索全部${homeFeatures.find(([id])=>id===homeFeature)[1]} <span aria-hidden="true">›</span></button><p class="home-disclaimer">虚构故事与角色 · AI 结果为模拟</p></div>`}</div></div>`
+}
+let dramaCategory='精选';
+function openDramaCatalog(category='全部'){
+ if(category==='历史'){dramaCategory='历史';go('dramas');return}
+ openShortSearch();
+}
+function dramaList(){return dramaCategory==='历史'?shortHistory():shortDiscovery()}
+function dramaCatalog(){return shortDiscovery()}
+function openDrama(i){dramaId=i;episode=Number(localStorage.getItem('hg-ep-'+i)||1);playing=false;state.history=state.history.filter(id=>id!==i);state.history.unshift(i);save();go('player')}
+function playerIcon(name){
+ const paths={bookmark:'<path d="M6 3h12a2 2 0 0 1 2 2v16l-8-4-8 4V5a2 2 0 0 1 2-2Z"/><path d="M9 8a3 3 0 0 0 6 0"/>',comment:'<rect x="3" y="3" width="18" height="17" rx="3"/><path d="m8 20 4 3 3-3M8 8h8M8 13h5"/>',like:'<path d="M8 10 12 3c1-2 4-1 3 2l-1 5h5c2 0 3 1 2 3l-2 7H5V10Z"/>',bag:'<rect x="3" y="4" width="18" height="17" rx="3"/><path d="m3 8 9 4 9-4"/><circle cx="12" cy="11" r="3"/>',share:'<path d="m14 3 8 7-8 7v-5C7 12 4 16 2 21c0-10 5-14 12-14Z"/>',expand:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="m7 17 10-10M12 7h5v5M7 12v5h5"/>',speed:'<circle cx="12" cy="12" r="9"/><path d="m12 12 5-7"/><circle cx="12" cy="12" r="1"/>',up:'<path d="m5 15 7-7 7 7"/>'};
+ return `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name]}</svg>`;
+}
+function player(){
+ if(dramas[dramaId].sourceId)return shortPlayer();
+ const d=dramas[dramaId],fav=state.favs.includes(dramaId),liked=(state.dramaLikes||[]).includes(dramaId),comments=(state.dramaComments||[]).filter(item=>item.dramaId===dramaId);
+ return `<section class="player reference-player" data-od-id="vertical-player" aria-label="${esc(d.name)}播放页"><img class="reference-poster" src="assets/${d.img}.jpg" alt="${esc(d.name)}氛围封面"><button class="reference-play-surface" onclick="togglePlay()" aria-label="播放或暂停"><span id="play-toggle">${playing?'Ⅱ':I('play')}</span></button><header class="reference-player-top"><button onclick="back()" aria-label="返回">${I('back')}</button><span class="reference-top-divider" aria-hidden="true"></span><button onclick="tab('home')" aria-label="返回首页">${I('home')}</button><h2>第 ${episode} 集 <small>/ ${d.eps}</small></h2><button class="reference-speed" onclick="cyclePlayerSpeed(this)" aria-label="播放倍速">${playerIcon('speed')}<span>${speed.toFixed(1)}x</span></button></header><aside class="reference-player-actions" aria-label="剧集操作"><button class="${fav?'active':''}" data-od-id="drama-favorite" aria-label="${fav?'取消收藏':'收藏短剧'}" aria-pressed="${fav}" onclick="toggleFav()">${playerIcon('bookmark')}<span>${fav?'1.831K':'1.83K'}</span></button><button onclick="playerComments()" aria-label="评论">${playerIcon('comment')}<span>${comments.length}</span></button><button class="${liked?'active':''}" aria-label="点赞" aria-pressed="${liked}" onclick="togglePlayerLike()">${playerIcon('like')}<span>${liked?'1.431K':'1.43K'}</span></button><button onclick="openDramaTip()" aria-label="打赏短剧" data-od-id="drama-tip">${I('gift')}<span>打赏</span></button><button onclick="copyText('海外红果娱乐 · '+dramas[dramaId].name+' · 第'+episode+'集')" aria-label="分享剧集">${playerIcon('share')}</button></aside><div class="player-story"><span>HONGGUO ORIGINAL</span><h2>${d.name}</h2><p>${d.genre} · ${d.lang} · 全 ${d.eps} 集</p><small>原型播放演示 · 暂无真实视频</small></div><div class="progress reference-progress" id="play-progress" aria-hidden="true"></div><footer class="reference-player-bottom"><button class="reference-episodes" onclick="episodes()"><span>第 ${episode} 集 · 选集 <small>共 ${d.eps} 集</small></span>${playerIcon('up')}</button><button class="reference-fullscreen" onclick="togglePlayerFullscreen()" aria-label="全屏播放">${playerIcon('expand')}</button></footer></section>`;
+}
+let pendingDramaTip=null;
+function openDramaTip(){
+ pendingDramaTip={dramaId};
+ modal('打赏短剧',`<p>打赏《${esc(dramas[dramaId].name)}》</p><div class="card row"><span>钱包余额</span><b class="gold">${state.coins} 金币</b></div><label class="search"><span style="white-space:nowrap">打赏金币</span><input id="drama-tip-amount" type="number" min="1" step="1" value="20" aria-label="打赏金币数量"></label><p id="drama-tip-error" role="alert" style="margin:8px 0;color:var(--gold)"></p><button class="primary wide" data-od-id="confirm-drama-tip" onclick="confirmDramaTip()">确认打赏</button>`);
+}
+function confirmDramaTip(){
+ if(!pendingDramaTip||!document.getElementById('drama-tip-amount'))return;
+ const amount=Number(document.getElementById('drama-tip-amount').value);
+ if(!Number.isSafeInteger(amount)||amount<=0){document.getElementById('drama-tip-error').textContent='请输入大于0的整数金币';return}
+ if(state.coins<amount){pendingDramaTip=null;insufficient();return}
+ const target=pendingDramaTip.dramaId;pendingDramaTip=null;
+ if(!Array.isArray(state.dramaTips))state.dramaTips=[];
+ state.dramaTips.unshift({dramaId:target,amount,at:Date.now()});
+ earn(-amount,'短剧打赏 · '+dramas[target].name);closeModal();toast('打赏成功 · '+amount+' 金币');
+}
+function cyclePlayerSpeed(button){speed=speed>=2?1:speed+.5;button.querySelector('span').textContent=speed.toFixed(1)+'x'}
+function togglePlayerLike(){
+ if(!Array.isArray(state.dramaLikes))state.dramaLikes=[];
+ const index=state.dramaLikes.indexOf(dramaId);if(index<0)state.dramaLikes.push(dramaId);else state.dramaLikes.splice(index,1);save();render();
+}
+function playerComments(){
+ const comments=(state.dramaComments||[]).filter(item=>item.dramaId===dramaId);
+ modal('评论',`<div class="reference-comments">${comments.length?comments.map(item=>`<div class="card"><small>我</small><p>${esc(item.text)}</p></div>`).join(''):'<p>暂无评论</p>'}</div><label class="search"><input id="player-comment-input" maxlength="200" placeholder="说说你的想法" aria-label="评论内容"></label><button class="primary wide" onclick="submitPlayerComment()">发布评论</button>`);
+}
+function submitPlayerComment(){const input=document.getElementById('player-comment-input'),text=input.value.trim();if(!text){input.focus();return}if(!Array.isArray(state.dramaComments))state.dramaComments=[];state.dramaComments.push({dramaId,text});save();render();playerComments()}
+async function togglePlayerFullscreen(){
+ try{if(document.fullscreenElement)await document.exitFullscreen();else await document.querySelector('.reference-player').requestFullscreen()}catch{toast('当前浏览器暂不支持全屏')}
+}
+function togglePlay(){playing=!playing;$('#play-toggle').innerHTML=playing?'Ⅱ':I('play');if(playing){toast('正在模拟播放 · 无真实视频');let v=25;clearInterval(playerTimer);playerTimer=setInterval(()=>{v+=2;let p=$('#play-progress');if(!p||!playing){clearInterval(playerTimer);return}p.style.setProperty('--progress',v+'%');if(v>=100){clearInterval(playerTimer);playing=false;if(autoNext)chooseEpisode(Math.min(episode+1,dramas[dramaId].eps));else render()}},400)}}
+function toggleFav(){let i=state.favs.indexOf(dramaId);if(i<0)state.favs.push(dramaId);else state.favs.splice(i,1);save();render();}
+function episodes(){if(dramas[dramaId].sourceId){shortEpisodes();return}modal('选择集数',`<small>前3集免费，后续每集20金币 · 示例规则</small><div class="episode-grid">${Array.from({length:dramas[dramaId].eps},(_,i)=>`<button class="${episode===i+1?'selected':''}" onclick="chooseEpisode(${i+1})">${i+1}${i>2&&!state.unlocked.includes(dramaId+'-'+(i+1))?' · 锁':''}</button>`).join('')}</div>`)}
+function chooseEpisode(n){let key=dramaId+'-'+n;if(n>3&&!state.unlocked.includes(key)&&!state.vip){modal('解锁下一段故事',`<p>《${dramas[dramaId].name}》第 ${n} 集</p><div class="card row"><span>本集消耗</span><b class="gold">20 金币</b></div><small>当前余额 ${state.coins} 金币 · 解锁后可重复观看</small><button class="primary wide" onclick="unlock(${n})">确认解锁 · 20 金币</button><button class="wide secondary" style="margin-top:10px" onclick="adUnlock(${n})">看广告解锁（模拟）</button>`);return}episode=n;localStorage.setItem('hg-ep-'+dramaId,n);playing=false;closeModal();render()}
+function unlock(n){if(state.unlocked.includes(dramaId+'-'+n))return chooseEpisode(n);if(state.coins<20)return insufficient();earn(-20,'短剧解锁 · '+dramas[dramaId].name+' · 第'+n+'集');state.unlocked.push(dramaId+'-'+n);save();chooseEpisode(n);toast('已解锁第 '+n+' 集')}
+function adUnlock(n){modal('广告体验',`<p>模拟广告正在播放，请等待片刻。</p>`);setTimeout(()=>{state.unlocked.push(dramaId+'-'+n);save();chooseEpisode(n);toast('广告观看完成，已解锁')},1800)}
+function dramaMenu(){modal('剧集操作',`<button class="list-row" onclick="toggleFav();closeModal()">${state.favs.includes(dramaId)?'取消收藏':'收藏短剧'}${I('heart')}</button><button class="list-row" onclick="closeModal();toast('已点赞，感谢喜欢')">喜欢这部剧${I('check')}</button><button class="list-row" onclick="copyText('海外红果娱乐 · '+dramas[dramaId].name)">分享剧集${I('arrow')}</button><button class="list-row" onclick="closeModal();tab('home');toast('已记录，将减少类似推荐')">不感兴趣${I('arrow')}</button>`)}
+function detail(){let d=dramas[dramaId];return bar('剧情详情')+`<div class="content"><div class="row-start" style="margin:12px 0 24px">${img(d.img,d.name+'氛围图','avatar')}<div><h2>${d.name}</h2><small>${d.genre} · ${d.lang} · 16+ · 全${d.eps}集</small></div></div><h3>故事简介</h3><p style="margin:12px 0 24px;color:var(--muted);line-height:1.9">${d.desc}</p>${heading('走近故事中的人')}<button class="list-row" onclick="openChat(${d.role})"><span class="row-start">${img(characters[d.role].img,characters[d.role].name,'avatar')}<span><b>${characters[d.role].name}</b><br><small>和角色聊聊另一面的故事</small></span></span>${I('arrow')}</button><div class="spacer"></div><button class="primary wide" onclick="back()">返回播放</button><p class="footnote">剧情与角色均为虚构示例。摄影仅用于氛围展示。</p></div>`}
+// Template fields used by the front-end prototype. Durations retain the existing 8-second examples.
+const faceTemplates=[
+ {title:'都市肖像',image:'woman',tags:['都市','肖像'],videoSeconds:8},
+ {title:'海边电影',image:'romance',tags:['海边','电影'],videoSeconds:8},
+ {title:'夜色主角',image:'man',tags:['夜色'],videoSeconds:8},
+ {title:'复古街拍',image:'noir',tags:['复古','街拍'],videoSeconds:8}
+];
+// Eight list samples retain stable IDs; remaining samples supply related recommendations.
+const relatedTemplateTitles=[['都市光影','城市漫步','街角肖像','都会写真'],['海边日落','海岸漫步','海风光影','沙滩电影'],['夜色霓虹','夜间街景','夜幕肖像','城市夜光'],['复古光影','老街漫步','胶片街拍','复古写真']];
+faceTemplates.slice().forEach((source,group)=>relatedTemplateTitles[group].forEach((title,i)=>faceTemplates.push({title,image:i===0?['man','woman','noir','romance'][group]:['woman','romance','man','noir'][i],tags:[...source.tags],videoSeconds:source.videoSeconds,relatedOnly:i!==0})));
+function selectFaceTemplate(index){stack.push(navigationSnapshot());template=index;faceStep=2;render();$('#screen').scrollTop=0}
+function selectRelatedFaceTemplate(index){template=index;faceStep=2;render();document.getElementById('screen').scrollTop=0}
+function faceRelatedRecommendations(){
+ const selected=faceTemplates[template];
+ const related=faceTemplates.map((item,index)=>({item,index})).filter(({item,index})=>index!==template&&item.tags.some(tag=>selected.tags.includes(tag))).slice(0,4);
+ return `<section class="face-related" aria-labelledby="face-related-title"><h3 id="face-related-title">相关推荐</h3><div class="poster-grid">${related.map(({item,index})=>`<button type="button" class="poster-card" data-related-template="${index}" onclick="selectRelatedFaceTemplate(${index})"><div class="poster">${img(item.image,item.title+'换脸模板')}<span class="tag">${faceType==='video'?item.videoSeconds+'秒 · '+item.videoSeconds*25:'80'} 金币</span><div class="poster-title">${item.title}</div></div>${faceTemplateTags(item.tags)}</button>`).join('')}</div></section>`;
+}
+function faceTemplateTags(tags){return tags.length?`<div class="face-template-tags">${tags.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div>`:''}
+const faceTagSelection={image:'全部',video:'全部'};
+function faceFilterTags(){return ['全部',...new Set(faceTemplates.flatMap(item=>item.tags))]}
+function selectFaceTag(type,encodedTag){
+ const tag=decodeURIComponent(encodedTag);
+ if(!['image','video'].includes(type)||!faceFilterTags().includes(tag))return;
+ faceTagSelection[type]=tag;render();
+ document.querySelector('.face-filter-tabs button[aria-pressed="true"]')?.focus({preventScroll:true});
+}
+function filteredFaceTemplates(type){
+ const selected=faceTagSelection[type];
+ return faceTemplates.map((item,index)=>({item,index})).filter(({item})=>!item.relatedOnly&&(selected==='全部'||item.tags.includes(selected)));
+}
+function faceTagFilters(type){
+ return `<nav class="face-filter-tabs" data-od-id="face-filter-${type}" aria-label="${type==='image'?'图片':'视频'}换脸模板标签">${faceFilterTags().map(tag=>`<button type="button" class="face-filter-tab ${faceTagSelection[type]===tag?'selected':''}" data-face-tag="${esc(tag)}" aria-pressed="${faceTagSelection[type]===tag}" onclick="selectFaceTag('${type}','${encodeURIComponent(tag)}')">${esc(tag)}</button>`).join('')}</nav>`;
+}
+function currentVideoSeconds(){return faceTemplates[template].videoSeconds}
+function faceTaskCost(){return faceType==='image'?80:currentVideoSeconds()*25}
+function openFace(type='image'){faceType=type;faceStep=1;template=0;facePhoto='';go('face')}
+function switchFaceTemplate(direction){const ids=faceTemplates.map((item,index)=>({item,index})).filter(({item})=>!item.relatedOnly).map(({index})=>index),current=ids.indexOf(template);template=ids[(Math.max(0,current)+direction+ids.length)%ids.length];render()}
+function isFaceFavorite(){return Array.isArray(state.faceFavs)&&state.faceFavs.includes(faceType+':'+template)}
+function toggleFaceFavorite(){
+ if(!Array.isArray(state.faceFavs))state.faceFavs=[];
+ const key=faceType+':'+template,index=state.faceFavs.indexOf(key);
+ if(index<0)state.faceFavs.push(key);else state.faceFavs.splice(index,1);
+ save();const screen=document.getElementById('screen'),scroll=screen.scrollTop;render();screen.scrollTop=scroll;
+}
+function faceFavoriteButton(){const active=isFaceFavorite();return `<button type="button" class="favorite-button ${active?'selected':''}" data-od-id="face-favorite" aria-pressed="${active}" onclick="toggleFaceFavorite()">${I('heart')}<span>${active?'已收藏':'收藏'}</span></button>`}
+function faceUploadNotice(){
+ let notice={"title":"上传须知","body":"请确认你拥有照片使用权，不上传未成年人、名人或未经授权的人像。本原型不进行真实人脸检测。"};
+ try{const config=JSON.parse(localStorage.getItem('hongguo-admin-v14')||'{}').uploadNotice;if(config&&typeof config.title==='string'&&config.title.trim()&&typeof config.body==='string'&&config.body.trim())notice=config}catch{}
+ return '<div class="card" data-od-id="face-upload-notice"><h3>'+esc(notice.title)+'</h3><p class="small" style="margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere">'+esc(notice.body)+'</p></div>';
+}
+function refreshFaceUploadNotice(){const card=document.querySelector('[data-od-id="face-upload-notice"]');if(card)card.outerHTML=faceUploadNotice()}
+window.addEventListener('storage',event=>{if(event.key==='hongguo-admin-v14'||event.key===null)refreshFaceUploadNotice()});
+window.addEventListener('focus',refreshFaceUploadNotice);
+function face(){return faceStep===1?faceGallery():faceWorkspace()}
+function uploadFace(el){let f=el.files[0];if(!f)return;if(f.size>10*1024*1024||!['image/jpeg','image/png','image/webp'].includes(f.type)){toast('请选择10MB以内的 JPG、PNG 或 WebP 图片');return}let r=new FileReader();r.onload=()=>{facePhoto=r.result;render();toast('照片已读取 · 人脸检测为模拟通过')};r.readAsDataURL(f)}
+let taskTimer,selectedTaskId=null;
+function validFaceTask(t){return t&&typeof t.id==='string'&&Number.isFinite(t.at)&&faceTemplates[t.template]}
+function faceRecords(){
+ const records=Array.isArray(state.faceTasks)?state.faceTasks:[];
+ const map=new Map(records.filter(validFaceTask).map(t=>[t.id,t]));
+ if(validFaceTask(state.task))map.set(state.task.id,state.task);
+ else state.task=null;
+ state.faceTasks=[...map.values()].sort((a,b)=>b.at-a.at);save();return state.faceTasks
+}
+function viewedTask(){const records=faceRecords();return selectedTaskId?records.find(t=>t.id===selectedTaskId)||null:state.task}
+function openHistoryTask(id){if(!faceRecords().some(t=>t.id===id)){toast('记录已删除');render();return}selectedTaskId=id;go('task')}
+function faceHistory(){return creationHistory()}
+function showFaceSubmittedNotice(){
+ let notice={"title":"已上传，正在生成","body":"照片已上传，生成需要一些时间。你可以稍后前往“换脸记录”查看进度和结果。"};
+ try{const config=JSON.parse(localStorage.getItem('hongguo-admin-v14')||'{}').generationNotice;if(config&&typeof config.title==='string'&&config.title.trim()&&typeof config.body==='string'&&config.body.trim())notice=config}catch{}
+ modal(esc(notice.title),'<p data-od-id="face-submitted-notice" class="small" style="margin:18px 0;white-space:pre-wrap;overflow-wrap:anywhere">'+esc(notice.body)+'</p><button type="button" class="primary wide" data-od-id="face-submitted-history" onclick="closeModal();go(\'faceHistory\')">查看换脸记录</button><button type="button" class="secondary wide" style="margin-top:10px" data-od-id="face-submitted-dismiss" onclick="closeModal()">我知道了</button>');
+}
+function submitTask(){faceRecords();if(state.task&&['排队中','处理中'].includes(state.task.status)){selectedTaskId=state.task.id;go('task');toast('当前任务无法取消，请等待任务完成');return}if(!facePhoto)return toast('请先上传人脸照片');let cost=faceTaskCost();if(state.coins<cost)return insufficient();earn(-cost,(faceType==='image'?'图片':'视频')+'换脸 · '+faceTemplates[template].title+(faceType==='video'?' · '+currentVideoSeconds()+'秒':''));state.task={status:'排队中',type:faceType,template,videoSeconds:faceType==='video'?currentVideoSeconds():null,cost,id:'DEMO-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8),at:Date.now()};state.faceTasks.unshift(state.task);selectedTaskId=state.task.id;save();go('task');scheduleTask();showFaceSubmittedNotice()}
+function scheduleTask(){
+ clearTimeout(taskTimer);const now=Date.now(),records=faceRecords();
+ records.forEach(t=>{const elapsed=now-t.at;if(t.status==='排队中'&&elapsed>=2200)t.status='处理中';if(t.status==='处理中'&&elapsed>=6200)t.status='完成'});
+ if(state.task)state.task=records.find(t=>t.id===state.task.id)||null;save();
+ if(['task','faceHistory'].includes(page))render();
+ const active=records.filter(t=>['排队中','处理中'].includes(t.status));
+ if(active.length){const delay=Math.min(...active.map(t=>t.at+(t.status==='排队中'?2200:6200)-now));taskTimer=setTimeout(scheduleTask,Math.max(10,delay))}
+}
+function task(){return creationTask()}
+function deleteTask(){const t=viewedTask();if(!t)return toast('记录已删除');if(t.status!=='完成')return toast('进行中的任务无法取消或删除');const id=t.id;confirmSheet('删除作品？','作品与对应的创作记录将同时删除，已完成任务的金币不退还。',()=>{state.faceTasks=faceRecords().filter(item=>item.id!==id);if(state.task?.id===id)state.task=null;save();closeModal();render();scheduleTask();toast('作品与历史记录已删除')},'删除作品')}
+function downloadResult(id){const t=id?faceRecords().find(t=>t.id===id):viewedTask();if(!t||t.status!=='完成'){toast('结果未完成或已删除');if(['task','faceHistory'].includes(page))render();return}let a=document.createElement('a');a.href='assets/'+faceTemplates[t.template].image+'.jpg';a.download='红果-模拟模板原图.jpg';a.click();toast('下载的是模板原图，并非换脸结果')}
+function shareTask(){const t=viewedTask();if(!t||t.status!=='完成'){render();return toast('结果未完成或已删除')}copyText('我的红果 AI 作品 · '+t.id)}
+
+const npcProfiles=[{game:'午夜来信',uses:1280,favorites:236,cg:'woman',emotion:'沉静',detail:'你将以线索整理者的身份，与翻译师艾琳一起解读午夜来信。在陌生城市的灯影里，选择信任、追问或倾听，让故事从你的第一句话开始。'},{game:'只在日落时爱你',uses:960,favorites:184,cg:'man',emotion:'温柔',detail:'与摄影师诺亚重返海边小城，聊一张照片背后的回忆。你可以分享此刻的心情，也可以为下一次日落计划一段旅程。'},{game:'她的第二人生',uses:720,favorites:128,cg:'noir',emotion:'坚定',detail:'在陌生城市遇见设计师林夏。从生活里的微小选择开始，交流勇气、梦想与重新出发的可能。'},{game:'旧书店的灯',uses:360,favorites:68,cg:'man',emotion:'专注',detail:'沈知远是一位32岁的书店店主，也是虚构成年演示角色。雨夜的旧书店仍亮着灯，你可以和他聊一本书、一段回忆，或生活中尚未找到答案的小事。故事从你的第一句话开始。'},{game:'雨后电台',uses:420,favorites:82,cg:'woman',emotion:'平和',detail:'许晴是一位29岁的电台主持人，也是虚构成年演示角色。晚间节目录制结束后，你们围绕城市日常与心情展开交流。你可以分享今天的经历，也可以一起整理下一步的打算。'}];
+let npcDraft={text:'',image:null,voice:null},npcNextFail=false,npcNextImage=false,npcRecording='idle',npcVoiceTimer=null,npcVoicePlaying=null,npcLoadingImage=false;
+const npcId=()=>Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8);
+function npcStore(){try{save();return true}catch{return false}}
+function npcInit(){
+ if(!Array.isArray(state.npcSessions)){
+  state.npcSessions=[];
+  Object.entries(state.messages||{}).forEach(([role,list])=>{if(!characters[role]||!Array.isArray(list))return;const turns=[];let turn=null;list.forEach(m=>{if(m.me){turn={id:npcId(),user:{text:m.text||''},reply:{text:'',emotion:npcProfiles[role].emotion},status:'已停止'};turns.push(turn)}else if(turn&&turn.status!=='完成'){turn.reply.text=m.text||'';turn.status='完成'}});if(turns.length)state.npcSessions.push({id:npcId(),role:Number(role),title:(state.chatNames||{})[role]||characters[role].name+'的故事',turns,updatedAt:Date.now()})});
+ }
+ state.npcSessions.forEach(s=>s.turns.forEach(t=>{if(['发送中','处理中','生成中'].includes(t.status)){t.status='失败';t.error='上次演示已中断，请重试本轮。'}}));
+ if(state.npcResume&&state.npcSessions.some(s=>s.id===state.npcCurrent)){const s=state.npcSessions.find(s=>s.id===state.npcCurrent);characterId=s.role;page='chat'}
+ npcStore()
+}
+function npcSession(){return (state.npcSessions||[]).find(s=>s.id===state.npcCurrent)||null}
+function npcFavorite(i){return (state.npcFavs||[]).includes(i)}
+function npcCounts(i){return {uses:npcProfiles[i].uses+(state.npcSessions||[]).filter(s=>s.role===i).length,favorites:npcProfiles[i].favorites+(npcFavorite(i)?1:0)}}
+function toggleNpcFavorite(i){state.npcFavs=state.npcFavs||[];let n=state.npcFavs.indexOf(i);if(n<0)state.npcFavs.push(i);else state.npcFavs.splice(n,1);npcStore();if(page==='npc')updateNpc();else render();toast(n<0?'已收藏角色':'已取消收藏')}
+function npc(){return `<header class="topbar"><h2 data-od-id="npc-title">NPC · 故事之外</h2><button class="secondary" onclick="quickNpc()" data-od-id="npc-quick-start">快速开始</button></header><div class="content npc-directory"><p class="small" style="margin-bottom:14px">选择一位角色，由你开启故事。</p><label class="search">${I('search')}<input aria-label="搜索角色、故事或简介" placeholder="搜索角色、故事或简介" value="${esc(query)}" oninput="query=this.value;updateNpc()"></label><div class="chips">${['全部','最近使用','已收藏'].map(t=>`<button class="chip ${npcFilter===t?'selected':''}" aria-pressed="${npcFilter===t}" onclick="npcFilter='${t}';render()">${t}</button>`).join('')}</div><div id="npc-results">${npcCards()}</div><p class="footnote">角色与统计均为本地模拟示例</p></div>`}
+function npcCard(i,prefix='npc-card'){const c=characters[i];let n=npcCounts(i);return `<article class="npc-browse-card" data-od-id="${prefix}-${i}"><button class="npc-card-open" onclick="openNpcDetail(${i})" aria-label="查看${c.name}角色详情"><div class="npc-browse-photo">${img(c.img,c.name+'角色头像')}</div><div class="npc-browse-copy"><h3>${c.name}</h3><p>${c.desc}</p></div></button><div class="npc-card-bottom"><small>使用 ${n.uses.toLocaleString()}</small><small>收藏 ${n.favorites.toLocaleString()}</small></div><button class="iconbtn npc-card-favorite ${npcFavorite(i)?'is-favorite':''}" aria-label="${npcFavorite(i)?'取消收藏':'收藏'}${c.name}" aria-pressed="${npcFavorite(i)}" onclick="event.stopPropagation();toggleNpcFavorite(${i})">${I('heart')}</button></article>`}
+function npcCards(){const recent=state.npcRecent||{};return characters.map((c,i)=>({c,i})).filter(({c,i})=>(!query||(c.name+c.title+c.desc).toLowerCase().includes(query.toLowerCase()))&&(npcFilter!=='最近使用'||recent[i])&&(npcFilter!=='已收藏'||npcFavorite(i))).sort((a,b)=>npcFilter==='最近使用'?(recent[b.i]||0)-(recent[a.i]||0):a.i-b.i).map(({i})=>npcCard(i)).join('')||'<div class="empty">暂无匹配角色，试试其他关键词或筛选。</div>'}
+function updateNpc(){$('#npc-results').innerHTML=npcCards()}
+function openNpcDetail(i){const origin=page==='npcDetail'?{page,characterId}:null;characterId=i;go('npcDetail',false,origin)}
+function npcRecommendations(){return characters.map((c,i)=>i).filter(i=>i!==characterId).slice(0,4).map(i=>npcCard(i,'npc-recommend-card')).join('')}
+function npcDetail(){const c=characters[characterId],p=npcProfiles[characterId],n=npcCounts(characterId);return bar('角色详情',`<button class="iconbtn ${npcFavorite(characterId)?'gold':''}" aria-label="收藏或取消收藏角色" aria-pressed="${npcFavorite(characterId)}" onclick="toggleNpcFavorite(characterId)">${I('heart')}</button>`)+`<div class="content npc-detail"><h2 data-od-id="npc-game-title">${p.game}</h2><dl class="npc-detail-counts"><div><dt>使用次数</dt><dd>${n.uses.toLocaleString()}</dd></div><div><dt>收藏次数</dt><dd>${n.favorites.toLocaleString()}</dd></div></dl><h3 data-od-id="npc-game-detail-title">游戏详情</h3><p class="small" data-od-id="npc-game-detail" style="margin:10px 0 20px;line-height:1.9">${p.detail}</p><h3 data-od-id="npc-game-cg-title">游戏CG图片</h3><div class="npc-detail-cg" data-od-id="npc-game-cg">${img(p.cg,c.name+'游戏CG图片')}</div><button class="primary wide" onclick="openChat(${characterId})" data-od-id="npc-detail-start">开始对话</button><section class="npc-recommendations" data-od-id="npc-recommendations" aria-labelledby="npc-recommend-title"><h3 id="npc-recommend-title" data-od-id="npc-recommend-title">相关推荐</h3><div class="npc-recommend-grid" data-od-id="npc-recommend-grid">${npcRecommendations()}</div></section></div>`}
+function quickNpc(){modal('快速开始',`<p>选择角色，直接开启一段新的空对话。</p>${characters.map((c,i)=>`<button class="list-row" onclick="closeModal();openChat(${i},true)"><span class="row-start">${img(c.img,c.name,'avatar')}<span>${c.name}<br><small>${npcProfiles[i].game}</small></span></span>${I('arrow')}</button>`).join('')}`)}
+function npcCreate(role){const session={id:npcId(),role,title:characters[role].name+'的故事',turns:[],updatedAt:Date.now()};state.npcSessions=state.npcSessions||[];state.npcSessions.unshift(session);state.npcCurrent=session.id;return session}
+function openChat(i,fresh=false){const origin=page==='npcDetail'?{page,characterId}:null;if(chatBusy)stopChat(false);characterId=i;state.npcSessions=state.npcSessions||[];let session=fresh?null:state.npcSessions.find(s=>s.id===state.npcCurrent&&s.role===i)||state.npcSessions.find(s=>s.role===i);if(!session)session=npcCreate(i);state.npcCurrent=session.id;state.npcRecent=state.npcRecent||{};state.npcRecent[i]=Date.now();npcDraft={text:'',image:null,voice:null};npcNextFail=false;npcNextImage=false;npcRecording='idle';npcStore();go('chat',false,origin)}
+function npcTurnMarkup(t){const c=characters[characterId];const r=t.reply||{};return `<section class="npc-turn" data-od-id="npc-turn-${t.id}"><div class="npc-message user-message"><span class="npc-speaker">你</span><div class="bubble me">${t.user.text?`<div class="npc-message-text">${esc(t.user.text)}</div>`:''}${t.user.image?`<img class="npc-message-image" src="${t.user.image.src}" alt="用户上传图片：${esc(t.user.image.name)}">`:''}${t.user.voice?`<span class="npc-voice-chip">语音 · ${t.user.voice.seconds}秒（模拟）</span>`:''}</div><small>${t.status==='发送中'?'发送中':'已发送'}</small></div><div class="npc-message role-message"><span class="npc-speaker">${c.name} <span class="badge">${r.emotion||npcProfiles[characterId].emotion}</span></span><div class="bubble"><div class="npc-message-text" id="npc-reply-${t.id}">${esc(r.text||(['发送中','处理中'].includes(t.status)?'正在处理你的消息…':t.status==='失败'?'本轮回复失败，请重试。':t.status==='已停止'?'本轮生成已停止。':''))}</div>${r.image?img(r.image,'角色图片回复：本地模拟CG','npc-message-image'):''}</div><div class="npc-message-tools"><small role="status" id="npc-status-${t.id}">${t.status}${t.error?' · '+esc(t.error):''}</small>${['发送中','处理中','生成中'].includes(t.status)?`<button onclick="stopChat()">停止生成</button>`:['失败','已停止'].includes(t.status)?`<button onclick="retryChat('${t.id}')">重试本轮</button>`:''}${t.status==='完成'&&r.voice&&state.npcVoiceAvailable!==false?`<button aria-label="${c.name}语音回复播放暂停重播" id="npc-audio-${t.id}" onclick="toggleNpcAudio('${t.id}')">${I('play')} ${npcVoicePlaying===t.id?'暂停语音（模拟播放中）':'语音播放（模拟）'}</button>`:''}</div></div></section>`}
+function npcDraftPreview(){return `${npcDraft.image?`<div class="npc-draft-image"><img src="${npcDraft.image.src}" alt="待发送图片预览"><button type="button" aria-label="移除待发送图片" onclick="npcDraft.image=null;render()">移除图片</button></div>`:''}${npcDraft.voice?`<div class="npc-voice-chip">语音 ${npcDraft.voice.seconds}秒 · 模拟<button type="button" onclick="voiceDialog()">重录 / 转文字</button><button type="button" aria-label="移除语音" onclick="npcDraft.voice=null;render()">移除</button></div>`:''}`}
+function chat(){const session=npcSession(),c=characters[characterId];if(!session)return bar('NPC 对话')+`<div class="content empty">还没有对话<button class="secondary wide" onclick="quickNpc()">选择角色</button></div>`;return `<header class="topbar npc-chat-header"><div class="back-title"><button class="iconbtn" onclick="back()" aria-label="返回">${I('back')}</button><div><h2>${esc(session.title)}</h2><small>${c.name} · ${npcProfiles[characterId].game}</small></div></div><div class="row-start"><button class="iconbtn" onclick="openFace('image')" aria-label="角色换脸">${I('image')}</button><button class="iconbtn" onclick="chatMenu()" aria-label="对话管理">${I('more')}</button></div></header><div class="npc-chat-context"><button onclick="openNpcDetail(${characterId})" aria-label="查看角色CG与剧情">${img(npcProfiles[characterId].cg,c.name+'角色CG','npc-chat-cg')}</button><div><strong>${c.name}</strong><small>${c.desc}</small><small>会参考长期对话内容 · 本地模拟</small></div></div><div class="chat-log npc-chat-log" id="chat-log">${session.turns.length?session.turns.map(npcTurnMarkup).join(''):`<div class="npc-chat-empty" data-od-id="npc-empty-chat"><h3>故事，由你开场</h3><p>${npcProfiles[characterId].detail}</p><small>还没有消息。发送文字、图片或模拟语音后，角色才会回应。</small></div>`}</div><form class="chat-input npc-composer" onsubmit="event.preventDefault();sendChat()"><div class="npc-draft-preview" id="npc-draft-preview">${npcDraftPreview()}</div><textarea id="chat-text" data-od-id="npc-chat-input" aria-label="多行消息输入" placeholder="说点什么…支持多行文字" maxlength="1000" rows="2" oninput="npcDraft.text=this.value" ${chatBusy?'disabled':''}>${esc(npcDraft.text)}</textarea><div class="npc-composer-options"><label><input type="checkbox" ${npcNextFail?'checked':''} ${chatBusy?'disabled':''} onchange="npcNextFail=this.checked">模拟本轮失败</label><label><input type="checkbox" ${npcNextImage?'checked':''} ${chatBusy?'disabled':''} onchange="npcNextImage=this.checked">本轮回复带图</label></div><div class="npc-composer-toolbar"><div class="row-start"><label class="npc-attach" aria-label="选择JPG PNG WEBP图片" title="选择图片">${I('image')}<input type="file" aria-label="上传聊天图片，支持JPG PNG WEBP" accept="image/jpeg,image/png,image/webp" ${chatBusy?'disabled':''} onchange="uploadNpcImage(this)"></label><button type="button" class="npc-tool-button" aria-label="模拟语音录制" ${chatBusy||state.npcVoiceAvailable===false?'disabled':''} onclick="voiceDialog()">录音</button></div><span class="small">${state.npcVoiceAvailable===false?'本地区未开放语音':'语音可用 · 模拟'}</span><button class="primary" data-od-id="npc-send" ${chatBusy||npcLoadingImage?'disabled':''} type="submit">${chatBusy?'处理中':npcLoadingImage?'读图中':'发送'}</button></div></form>`}
+function npcRedraw(){if(page!=='chat')return;const focus=document.activeElement?.id==='chat-text',start=focus?$('#chat-text').selectionStart:0;render();if(focus){$('#chat-text')?.focus();$('#chat-text')?.setSelectionRange(start,start)}const log=$('#chat-log');if(log)log.scrollTop=log.scrollHeight}
+function sendChat(){const session=npcSession();if(!session||chatBusy||npcLoadingImage)return;const text=($('#chat-text')?.value||npcDraft.text).trim();if(!text&&!npcDraft.image&&!npcDraft.voice)return toast('请先输入文字、选择图片或录制模拟语音');const turn={id:npcId(),user:{text,image:npcDraft.image,voice:npcDraft.voice},reply:{text:'',emotion:npcProfiles[characterId].emotion,voice:state.npcVoiceAvailable!==false},status:'发送中',wantImage:npcNextImage};session.turns.push(turn);session.updatedAt=Date.now();const fail=npcNextFail;npcDraft={text:'',image:null,voice:null};npcNextFail=false;npcNextImage=false;npcStore();npcGenerate(session,turn,fail)}
+function npcGenerate(session,turn,fail=false){clearTimeout(chatTimer);chatBusy=true;turn.status='发送中';turn.error='';turn.reply.text='';turn.reply.image=null;npcStore();npcRedraw();chatTimer=setTimeout(()=>{turn.status='处理中';npcStore();npcRedraw();chatTimer=setTimeout(()=>{if(fail){turn.status='失败';turn.error='模拟连接失败，未产生额外回复';chatBusy=false;npcStore();npcRedraw();return}turn.status='生成中';const answer=characters[session.role].reply;let n=0;npcRedraw();const step=()=>{n++;turn.reply.text=answer.slice(0,n);if(n>=answer.length){turn.status='完成';if(turn.wantImage)turn.reply.image=npcProfiles[session.role].cg;chatBusy=false;npcStore();npcRedraw();return}npcStore();const el=$('#npc-reply-'+turn.id);if(el&&page==='chat')el.textContent=turn.reply.text;chatTimer=setTimeout(step,35)};step()},650)},400)}
+function stopChat(show=true){clearTimeout(chatTimer);const session=npcSession(),turn=session?.turns.find(t=>['发送中','处理中','生成中'].includes(t.status));if(turn){turn.status='已停止';turn.error='';npcStore()}chatBusy=false;if(page==='chat')npcRedraw();if(show)toast('已停止本轮生成，可重试同一轮')}
+function retryChat(id){const session=npcSession(),turn=session?.turns.find(t=>t.id===id);if(chatBusy)return toast('请先等待或停止当前回复');if(!turn||!['失败','已停止'].includes(turn.status))return toast('当前没有可重试的失败或停止记录');closeModal();npcGenerate(session,turn,false)}
+function toggleNpcAudio(id){if(state.npcVoiceAvailable===false)return toast('本地区暂未开放语音回复');const turn=npcSession()?.turns.find(t=>t.id===id);if(!turn||turn.status!=='完成')return;const btn=$('#npc-audio-'+id);if(npcVoicePlaying===id){clearTimeout(npcVoiceTimer);npcVoicePlaying=null;btn.textContent='继续播放（模拟）';toast('语音已暂停');return}if(npcVoicePlaying){const prev=$('#npc-audio-'+npcVoicePlaying);if(prev)prev.textContent='重播语音（模拟）'}clearTimeout(npcVoiceTimer);npcVoicePlaying=id;btn.textContent='暂停语音（模拟播放中）';npcVoiceTimer=setTimeout(()=>{npcVoicePlaying=null;const target=$('#npc-audio-'+id);if(target)target.textContent='重播语音（模拟）'},3000)}
+function uploadNpcImage(input){const f=input.files?.[0];if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>5*1024*1024){toast('请选择5MB以内的 JPG / PNG / WEBP 图片');input.value='';return}npcLoadingImage=true;npcRedraw();const uploadSession=state.npcCurrent;const reader=new FileReader();reader.onerror=()=>{npcLoadingImage=false;toast('图片读取失败，请重新选择')};reader.onload=()=>{const image=new Image();image.onerror=()=>{npcLoadingImage=false;toast('图片无法解码，请重新选择')};image.onload=()=>{const scale=Math.min(1,640/image.width,640/image.height),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.width*scale));canvas.height=Math.max(1,Math.round(image.height*scale));canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);if(state.npcCurrent!==uploadSession){npcLoadingImage=false;return}npcDraft.image={src:canvas.toDataURL('image/jpeg',.65),name:f.name};npcLoadingImage=false;npcRedraw();toast('图片已添加，可与文字和语音一起发送')};image.src=reader.result};reader.readAsDataURL(f)}
+function voiceDialog(){if(state.npcVoiceAvailable===false)return toast('当前演示地区未开放语音');npcRecording=npcDraft.voice?'recorded':'idle';renderVoiceDialog()}
+function renderVoiceDialog(){const recording=npcRecording==='recording';modal('模拟语音录制',`<p>仅演示交互，不访问麦克风、不调用语音服务。</p><div class="card center"><h3>${recording?'录制中 · 模拟':npcRecording==='recorded'?'录制完成 · 8秒':'准备录音'}</h3><p>示例内容：我想听听你的故事。</p></div>${recording?`<button class="primary wide" onclick="npcRecording='recorded';renderVoiceDialog()">结束录制</button>`:npcRecording==='recorded'?`<button class="primary wide" onclick="npcDraft.voice={seconds:8};closeModal();npcRedraw();toast('模拟语音已添加')">使用这段语音</button><button class="secondary wide" style="margin-top:10px" onclick="npcRecording='recording';renderVoiceDialog()">重新录制</button><button class="secondary wide" style="margin-top:10px" onclick="transcribeNpcVoice()">转成文字加入输入框</button>`:`<button class="primary wide" onclick="npcRecording='recording';renderVoiceDialog()">开始模拟录制</button>`}<button class="secondary wide" style="margin-top:10px" onclick="npcRecording='idle';closeModal();toast('已取消本次录音，原有草稿保留')">取消录音</button>`)}
+function transcribeNpcVoice(){npcDraft.text+=(npcDraft.text?'\n':'')+'我想听听你的故事。';npcDraft.voice={seconds:8};closeModal();npcRedraw();toast('模拟转写完成，文字与语音均已加入草稿')}
+function chatMenu(){const session=npcSession();if(!session)return;modal('对话管理',`<button class="list-row" onclick="closeModal();newChat()">新建对话${I('plus')}</button><button class="list-row" onclick="renameChat()">重命名当前对话${I('arrow')}</button><button class="list-row" onclick="conversationList()">切换已有对话${I('arrow')}</button><button class="list-row" onclick="closeModal();toggleNpcFavorite(characterId)">${npcFavorite(characterId)?'取消收藏角色':'收藏角色'}${I('heart')}</button><button class="list-row" onclick="npcVoiceRegion()">语音能力（演示地区）${I('arrow')}</button><button class="list-row" onclick="deleteNpcConversation()">删除当前对话${I('arrow')}</button><p class="small">角色会参考长期对话内容；记忆能力仅由后台使用。</p>`)}
+function newChat(){if(chatBusy)stopChat(false);closeModal();openChat(characterId,true);toast('已创建新对话，等待你开启故事')}
+function renameChat(){const session=npcSession();if(!session)return;modal('重命名对话',`<label class="search"><input id="rename-input" aria-label="对话名称" maxlength="24" value="${esc(session.title)}" placeholder="输入对话名称"></label><button class="primary wide" onclick="saveNpcTitle()">保存名称</button>`)}
+function saveNpcTitle(){const name=$('#rename-input').value.trim(),session=npcSession();if(!name)return toast('请输入对话名称');if(!session)return;session.title=name;npcStore();closeModal();render();toast('对话名称已保存')}
+function conversationList(){modal('已有对话',`<p>新建对话不会删除原有记录。</p>${(state.npcSessions||[]).filter(s=>s.role===characterId).map(s=>`<button class="list-row" onclick="switchNpcConversation('${s.id}')"><span>${esc(s.title)}<br><small>${s.turns.length}轮对话</small></span>${s.id===state.npcCurrent?I('check'):I('arrow')}</button>`).join('')}`)}
+function switchNpcConversation(id){const s=(state.npcSessions||[]).find(s=>s.id===id);if(!s)return;if(chatBusy)stopChat(false);state.npcCurrent=id;characterId=s.role;npcDraft={text:'',image:null,voice:null};npcStore();closeModal();render();toast('已切换对话')}
+function deleteNpcConversation(){const session=npcSession();if(!session)return;const id=session.id;confirmSheet('删除当前对话？','该对话的消息将被删除且无法恢复，其他对话保持不变。',()=>{if(chatBusy)stopChat(false);state.npcSessions=state.npcSessions.filter(s=>s.id!==id);const next=state.npcSessions.find(s=>s.role===characterId);state.npcCurrent=next?.id||null;npcDraft={text:'',image:null,voice:null};npcStore();closeModal();render();toast('当前对话已删除')},'确认删除')}
+function npcVoiceRegion(){modal('语音能力 · 演示地区',`<p>文字与图片在所有演示地区可用。语音输入与回复仅在支持地区开放；全部为本地模拟。</p><button class="list-row" onclick="setNpcVoice(true)">语音能力已开放${state.npcVoiceAvailable!==false?I('check'):''}</button><button class="list-row" onclick="setNpcVoice(false)">语音能力暂未开放${state.npcVoiceAvailable===false?I('check'):''}</button>`)}
+function setNpcVoice(enabled){clearTimeout(npcVoiceTimer);npcVoicePlaying=null;state.npcVoiceAvailable=enabled;if(!enabled)npcDraft.voice=null;npcStore();closeModal();render();toast(enabled?'已切换至语音可用演示地区':'已切换至仅文字/图片演示地区')}
+
+function coins(){return experienceCoins()}
+function checkin(){let now=new Date(),today=now.toLocaleDateString('en-CA');if(state.checkin===today)return;let yesterday=new Date(now);yesterday.setDate(now.getDate()-1);state.streak=state.checkin===yesterday.toLocaleDateString('en-CA')?state.streak+1:1;let amount=state.streak%7===0?20:10;state.checkin=today;earn(amount,'每日签到 · 第'+state.streak+'天');render();modal('今日好运，已到账',`<div class="center gold" style="font-size:42px;margin:20px 0">+${amount}<span style="font-size:14px"> 金币</span></div><p class="center">已连续签到 ${state.streak} 天，明天也要记得来。</p><button class="primary wide" onclick="closeModal()">收下这份快乐</button>`)}
+function ledger(){return bar('金币流水')+`<div class="content"><div class="balance"><small>当前可用金币</small><div class="amount">${state.coins.toLocaleString()}</div></div>${heading('最近记录')}<div class="card">${state.ledger.map(l=>`<div class="list-row"><div><p>${esc(l.title)}</p><small>${esc(l.date)}</small></div><b class="${l.amount>0?'gold':''}">${l.amount>0?'+':''}${l.amount}</b></div>`).join('')}</div><p class="footnote">所有流水为本地演示记录，初始化余额与流水变动保持一致。</p></div>`}
+let favoriteCategory='image';
+function selectFavoriteCategory(type){if(!['image','video','drama'].includes(type))return;favoriteCategory=type;render()}
+function openFavoriteFace(type,index){
+ if(!['image','video'].includes(type)||!faceTemplates[index])return;
+ faceType=type;template=index;faceStep=2;facePhoto='';go('face');
+}
+function favorites(){
+ const labels={image:'图片换脸',video:'视频换脸',drama:'短剧'};
+ let cards='';
+ if(favoriteCategory==='drama')cards=[...new Set(state.favs)].filter(index=>dramas[index]).map(index=>poster(dramas[index],index)).join('');
+ else cards=[...new Set(Array.isArray(state.faceFavs)?state.faceFavs:[])].map(key=>{const [type,id]=key.split(':');return {type,index:Number(id)}}).filter(({type,index})=>type===favoriteCategory&&Number.isInteger(index)&&faceTemplates[index]).map(({type,index})=>{const item=faceTemplates[index];return `<button type="button" class="poster-card" data-od-id="favorite-${type}-${index}" onclick="openFavoriteFace('${type}',${index})"><div class="poster">${img(item.image,item.title+'换脸模板')}<span class="tag">${type==='video'?item.videoSeconds+'秒视频':'图片模板'}</span><div class="poster-title">${item.title}</div></div>${faceTemplateTags(item.tags)}</button>`}).join('');
+ return bar('我的收藏')+`<div class="content" data-od-id="favorites-page"><nav class="chips" aria-label="收藏分类">${Object.entries(labels).map(([type,label])=>`<button class="chip ${favoriteCategory===type?'selected':''}" aria-pressed="${favoriteCategory===type}" onclick="selectFavoriteCategory('${type}')">${label}</button>`).join('')}</nav>${cards?`<div class="poster-grid" data-od-id="favorites-grid">${cards}</div>`:`<p class="empty" data-od-id="favorites-empty">暂无收藏的${labels[favoriteCategory]}</p>`}</div>`;
+}
+let authMode='login',authMethod='email';
+const authDraft={email:'',phone:'',code:'',nickname:'',invite:'',gender:state.gender||state.auth?.gender||'',agreed:false,codeSent:false};
+function openAuth(){authDraft.code='';authDraft.codeSent=false;authDraft.gender=state.gender||state.auth?.gender||'';authDraft.agreed=false;authMode='login';go('login')}
+function changeAuthMode(mode){authMode=mode;authDraft.code='';authDraft.codeSent=false;render()}
+function changeAuthMethod(method){authMethod=method;authDraft.code='';authDraft.codeSent=false;render()}
+function authError(message){const error=document.getElementById('auth-error');if(error)error.textContent=message}
+function validAuthAccount(){
+ const value=authDraft[authMethod].trim();
+ return authMethod==='email'?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value):/^\+?[\d\s-]{6,20}$/.test(value)&&value.replace(/\D/g,'').length>=6;
+}
+function sendAuthCode(){
+ if(!validAuthAccount()){authError(authMethod==='email'?'请输入有效邮箱':'请输入有效手机号，支持国家区号');return}
+ authDraft.codeSent=true;authError('');document.getElementById('auth-code-note').textContent='演示验证码：123456';
+}
+function authGenderFields(){return `<fieldset class="auth-gender"><legend>性别 <small>选填</small></legend><div>${['男','女','跨性别'].map(value=>`<label><input type="radio" name="auth-gender" value="${value}" ${authDraft.gender===value?'checked':''} onchange="authDraft.gender=this.value"><span>${value}</span></label>`).join('')}</div></fieldset>`}
+function login(){
+ const register=authMode==='register';
+ return `<div class="auth-page"><header class="topbar"><button type="button" class="iconbtn" onclick="back()" aria-label="返回">${I('back')}</button></header><div class="auth-content"><div class="brand"><span class="logo">h</span>红果娱乐</div><h1>${register?'创建账号':'欢迎回来'}</h1><nav class="auth-mode" aria-label="登录注册"><button type="button" class="${!register?'selected':''}" aria-pressed="${!register}" onclick="changeAuthMode('login')">登录</button><button type="button" class="${register?'selected':''}" aria-pressed="${register}" onclick="changeAuthMode('register')">注册</button></nav><form onsubmit="event.preventDefault();submitAuth()" novalidate><div class="auth-method" aria-label="登录方式">${[['email','邮箱'],['phone','手机号']].map(([method,label])=>`<button type="button" class="${authMethod===method?'selected':''}" aria-pressed="${authMethod===method}" onclick="changeAuthMethod('${method}')">${label}</button>`).join('')}</div><label class="auth-field"><span>${authMethod==='email'?'邮箱':'手机号'}</span><input id="auth-account" type="${authMethod==='email'?'email':'tel'}" autocomplete="${authMethod==='email'?'email':'tel'}" placeholder="${authMethod==='email'?'请输入邮箱':'请输入手机号（含国家区号）'}" value="${esc(authDraft[authMethod])}" oninput="authDraft[authMethod]=this.value;authDraft.codeSent=false;document.getElementById('auth-code-note').textContent='';authError('')"></label><label class="auth-field"><span>验证码</span><div class="auth-code-field"><input id="auth-code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="请输入验证码" value="${esc(authDraft.code)}" oninput="authDraft.code=this.value;authError('')"><button type="button" onclick="sendAuthCode()">获取验证码</button></div></label><small id="auth-code-note">${authDraft.codeSent?'演示验证码：123456':''}</small>${register?`<label class="auth-field"><span>昵称 <small>选填</small></span><input id="auth-nickname" maxlength="20" placeholder="请输入昵称" value="${esc(authDraft.nickname)}" oninput="authDraft.nickname=this.value"></label><label class="auth-field"><span>邀请码 <small>选填</small></span><input id="auth-invite" maxlength="20" placeholder="请输入邀请码" value="${esc(authDraft.invite)}" oninput="authDraft.invite=this.value;authError('')"></label>`:''}${authGenderFields()}<div class="auth-agreement"><input id="auth-agreed" type="checkbox" ${authDraft.agreed?'checked':''} onchange="authDraft.agreed=this.checked;authError('')"><div><label for="auth-agreed">我已阅读并同意</label><button type="button" onclick="info('用户协议','用户协议正文待配置。')">《用户协议》</button><button type="button" onclick="info('隐私政策','隐私政策正文待配置。')">《隐私政策》</button></div></div><p id="auth-error" class="auth-error" role="alert"></p><button type="submit" class="primary wide" data-od-id="auth-submit">${register?'注册并登录':'登录'}</button></form><div class="auth-third-party"><p>其他登录方式</p><div>${['Facebook','X','Google'].map(provider=>`<button type="button" class="secondary" onclick="startThirdPartyAuth('${provider}')">${provider}</button>`).join('')}</div></div><p class="auth-demo-note">原型演示：验证码123456，不发送短信或邮件；第三方登录仅模拟授权。</p></div></div>`;
+}
+function submitAuth(){
+ if(!validAuthAccount())return authError(authMethod==='email'?'请输入有效邮箱':'请输入有效手机号，支持国家区号');
+ if(!authDraft.codeSent)return authError('请先获取验证码');
+ if(authDraft.code!=='123456')return authError('验证码不正确');
+ if(!authDraft.agreed)return authError('请先阅读并同意用户协议和隐私政策');
+ if(authMode==='register'&&authDraft.invite.trim()&&authDraft.invite.trim().toUpperCase()!=='HG8K26')return authError('演示邀请码无效，可留空或输入 HG8K26');
+ completeAuth(authMethod,authDraft[authMethod].trim());
+}
+function startThirdPartyAuth(provider){
+ if(!['Facebook','X','Google'].includes(provider))return;
+ if(!authDraft.agreed)return authError('请先阅读并同意用户协议和隐私政策');
+ authError('');modal(provider+' 登录',`<p>确认使用 ${provider} 模拟账号登录？</p><div class="redeem-actions"><button class="secondary" onclick="closeModal()">取消</button><button class="primary" onclick="completeAuth('${provider}','${provider}演示账号')">确认模拟登录</button></div>`);
+}
+function completeAuth(method,account){
+ const gender=['男','女','跨性别'].includes(authDraft.gender)?authDraft.gender:(state.gender||'');
+ state.gender=gender;state.auth={loggedIn:true,method,account,gender,nickname:authDraft.nickname.trim()||state.auth?.nickname||'海边的旅人'};
+ if(authMode==='register'&&authDraft.invite.trim()&&!state.inviterCode)state.inviterCode=authDraft.invite.trim().toUpperCase();
+ save();authDraft.code='';closeModal();stack=[];go('me',true);
+}
+function logoutAuth(){if(state.auth)state.auth.loggedIn=false;save();authDraft.code='';authDraft.agreed=false;closeModal();tab('me')}
+
+function me(){return experienceProfile()}
+function store(){return experienceStore()}
+let pendingPurchase=null,orderType='all';
+function payment(name,price,amount,vip){
+ pendingPurchase={id:'HG'+Date.now()+crypto.randomUUID().slice(0,8),type:vip?'vip':'coins',name,price,amount,vip,createdAt:Date.now()};
+ modal('确认示例订单',`<p>你选择了 ${esc(name)}。本次仅模拟支付，不收取任何费用。</p><div class="card"><div class="row"><span>示例金额</span><b>US$ ${price.toFixed(2)}</b></div><div class="row" style="margin-top:12px"><small>到账金币</small><b class="gold">${amount.toLocaleString()}</b></div></div><button class="primary wide" onclick="confirmPurchase()">确认模拟支付</button><button class="secondary wide" style="margin-top:10px" onclick="pendingPurchase=null;closeModal()">暂不购买</button>`)
+}
+function confirmPurchase(){
+ if(!pendingPurchase||!document.querySelector('#overlay [onclick="confirmPurchase()"]'))return;
+ const p=pendingPurchase;pendingPurchase=null;
+ if(!Array.isArray(state.orders))state.orders=[];
+ if(state.orders.some(o=>o.id===p.id))return;
+ const paidAt=Date.now();
+ state.orders.unshift({id:p.id,type:p.type,name:p.name,price:p.price,coins:p.amount,status:'已完成',channel:'模拟支付',createdAt:p.createdAt,paidAt,creditedAt:paidAt,validUntil:p.vip?paidAt+30*86400000:null});
+ state.vip=state.vip||p.vip;
+ earn(p.amount,(p.vip?'VIP月度套餐':'金币充值')+' · 模拟订单');
+ closeModal();render();toast('模拟支付完成，可在我的订单查看');
+}
+const sampleOrders=[
+ {id:'SAMPLE-CZ-001',type:'coins',name:'1500金币',price:4.99,coins:1500,status:'已完成',channel:'示例支付',createdAt:Date.parse('2026-11-01T10:00:00+08:00'),paidAt:Date.parse('2026-11-01T10:00:10+08:00'),creditedAt:Date.parse('2026-11-01T10:00:10+08:00'),sample:true},
+ {id:'SAMPLE-VIP-001',type:'vip',name:'VIP月度会员',price:9.99,coins:3000,status:'已完成',channel:'示例支付',createdAt:Date.parse('2026-11-01T09:00:00+08:00'),paidAt:Date.parse('2026-11-01T09:00:10+08:00'),creditedAt:Date.parse('2026-11-01T09:00:10+08:00'),validUntil:Date.parse('2026-12-01T09:00:10+08:00'),sample:true},
+ ...[
+  ['001','短剧解锁 · 午夜来信 · 第4集',20,'2026-11-01T14:30:00+08:00'],
+  ['002','短剧打赏 · 只在日落时爱你',100,'2026-11-01T14:00:00+08:00'],
+  ['003','图片换脸 · 复古写真',80,'2026-11-01T13:00:00+08:00'],
+  ['004','视频换脸 · 城市漫步 · 8秒',200,'2026-11-01T12:00:00+08:00']
+ ].map(([id,name,coins,date])=>({id:'SAMPLE-XF-'+id,type:'consumption',name,coins,status:'已扣款',channel:'金币钱包',createdAt:Date.parse(date),sample:true}))
+];
+function purchaseOrders(){
+ const purchases=(Array.isArray(state.orders)?state.orders:[]).filter(o=>o.type==='coins'||o.type==='vip');
+ const consumption=(Array.isArray(state.ledger)?state.ledger:[]).map((l,i)=>({...l,legacyIndex:i})).filter(l=>Number(l.amount)<0).map(l=>({id:l.id||'HG-XF-OLD-'+l.legacyIndex,type:'consumption',name:l.title,coins:Math.abs(Number(l.amount)),status:'已扣款',channel:'金币钱包',createdAt:l.at||Date.parse(l.date)||0,dateLabel:l.date}));
+ return [...purchases,...consumption,...sampleOrders].sort((a,b)=>b.createdAt-a.createdAt);
+}
+function selectOrderType(type){orderType=type;render()}
+function orderDate(o){return o.dateLabel||new Date(o.createdAt).toLocaleString('zh-CN')}
+function orders(){
+ const items=purchaseOrders().filter(o=>orderType==='all'||o.type===orderType);
+ return bar('我的订单')+`<div class="content" data-od-id="orders-page"><nav class="chips" aria-label="订单类型">${[['all','全部'],['coins','金币充值'],['vip','会员购买'],['consumption','金币消费']].map(([type,label])=>`<button class="chip ${orderType===type?'selected':''}" aria-pressed="${orderType===type}" onclick="selectOrderType('${type}')">${label}</button>`).join('')}</nav><p class="footnote" style="margin:0 0 14px">标注“示例”的记录仅供展示，不计入钱包余额。</p><div class="purchase-orders">${items.length?items.map(o=>`<button class="card purchase-order" data-order-id="${esc(o.id)}" onclick="showPurchaseOrder(this.dataset.orderId)"><div class="row"><span class="small">${o.type==='consumption'?'金币消费':o.type==='vip'?'会员购买':'金币充值'}${o.sample?' · 示例':''}</span><span class="badge">${esc(o.status)}</span></div><div class="row"><h3>${esc(o.name)}</h3><b class="gold" style="white-space:nowrap">${o.type==='consumption'?'-'+o.coins+' 金币':'US$ '+Number(o.price).toFixed(2)}</b></div><p class="small">${o.type==='consumption'?'消费单号':'订单号'}：${esc(o.id)}</p><div class="row"><small>${esc(orderDate(o))}</small><span class="small" style="white-space:nowrap">查看详情 ›</span></div></button>`).join(''):'<div class="empty" data-od-id="orders-empty">暂无订单记录</div>'}</div></div>`;
+}
+function showPurchaseOrder(id){
+ const o=purchaseOrders().find(item=>item.id===id);if(!o)return;
+ const consume=o.type==='consumption';
+ const rows=consume?[['消费单号',o.id],['消费用途',o.name],['消费金币','-'+Number(o.coins).toLocaleString()+' 金币'],['扣款方式',o.channel],['状态',o.status],['消费时间',orderDate(o)]]:[['订单号',o.id],['订单类型',o.type==='vip'?'会员购买':'金币充值'],['购买内容',o.name],['实付金额','US$ '+Number(o.price).toFixed(2)],['到账金币',Number(o.coins).toLocaleString()+' 金币']];
+ if(o.type==='vip')rows.push(['会员有效期','30天'],['有效期至',o.validUntil?new Date(o.validUntil).toLocaleString('zh-CN'):'—']);
+ if(!consume)rows.push(['支付渠道',o.channel],['订单状态',o.status],['下单时间',orderDate(o)],['支付时间',o.paidAt?new Date(o.paidAt).toLocaleString('zh-CN'):'—'],['到账时间',o.creditedAt?new Date(o.creditedAt).toLocaleString('zh-CN'):'—']);
+ modal(consume?'消费详情':'订单详情',`${o.sample?'<p>示例记录，仅供展示，不计入钱包余额。</p>':''}<dl class="purchase-order-details">${rows.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl><button class="secondary wide" onclick="contact()">订单问题，联系客服</button>`)
+}
+
+function redeem(){
+ modal('卡密兑换',`<form class="redeem-form" onsubmit="event.preventDefault();redeemCode()"><label class="search"><input id="redeem-input" aria-label="兑换码" placeholder="请输入兑换码" maxlength="30" autocomplete="off" oninput="document.getElementById('redeem-error').textContent='' "></label><p class="redeem-help">体验兑换码：DEMO100，可兑换100演示金币，仅限一次。</p><div id="redeem-error" class="redeem-error" role="alert"></div><div class="redeem-actions"><button type="button" class="secondary" onclick="closeModal()">取消</button><button type="submit" class="primary">确定</button></div></form>`);
+ document.querySelector('#overlay .sheet').classList.add('redeem-sheet');document.getElementById('redeem-input').focus();
+}
+function redeemCode(){
+ const input=document.getElementById('redeem-input');if(!input)return;
+ const code=input.value.trim().toUpperCase(),error=document.getElementById('redeem-error');
+ if(!code){error.textContent='请输入兑换码';input.focus();return}
+ if(code!=='DEMO100'){error.textContent='兑换码无效，请检查后重试';return}
+ if(state.redeemed){error.textContent='该兑换码已使用';return}
+ state.redeemed=true;earn(100,'演示卡密兑换');closeModal();render();toast('兑换成功，100金币已到账');
+}
+function distribution(){return distributorPage()}
+function team(){return distributorTeam()}
+function earnings(){return distributorEarnings()}
+function rules(){modal('活动规则', '<div class="distributor-rules">'+distributorRuleList()+'</div>')}
+function settings(){return bar('设置')+`<div class="content settings-menu"><button class="list-row" onclick="info('用户协议','用户协议正文待配置。')">用户协议</button><button class="list-row" onclick="info('隐私政策','隐私政策正文待配置。')">隐私政策</button><button class="list-row" onclick="info('法律声明','法律声明正文待配置。')">法律声明</button><button class="list-row" onclick="info('关于我们','红果娱乐，提供短剧与图片、视频换脸体验。')">关于我们</button><button class="list-row" onclick="contact()">联系我们</button><button class="list-row" onclick="info('版本','1.0.0 · Prototype')">版本</button></div>`}
+function language(){modal('语言与地区',`<p>原型使用中文供评审，保留海外语言偏好设置。正式多语言文案待接入。</p>${['简体中文','English','Español','日本語'].map(l=>`<button class="list-row" onclick="state.language='${l}';save();closeModal();render();toast('偏好已保存，当前仍为中文评审版')">${l}${state.language===l?I('check'):''}</button>`).join('')}`)}
+function contact(){modal('联系我们',`<p>订单咨询、内容举报或权益申诉，请填写反馈。这里不会向外部发送消息。</p><label class="search"><input id="feedback-input" aria-label="反馈内容" placeholder="请简要描述遇到的问题" maxlength="200"></label><button class="primary wide" onclick="if(!document.querySelector('#feedback-input').value.trim())return toast('请先填写问题');closeModal();toast('反馈已在本地模拟提交')">提交模拟反馈</button>`)}
+function insufficient(){modal('金币还差一点',`<p>当前余额 ${state.coins} 金币。可以先签到领取金币，或前往商店补充。</p><button class="primary wide" onclick="closeModal();go('coins')">前往金币中心</button><button class="secondary wide" style="margin-top:10px" onclick="closeModal();go('store')">查看充值套餐</button>`)}
+let modalReturnFocus=null;
+function modal(title,body){
+ if(!$('#overlay').firstElementChild)modalReturnFocus=document.activeElement;
+ $('#overlay').innerHTML=`<div class="modal-layer" onclick="if(event.target===this)closeModal()"><section class="sheet" role="dialog" aria-modal="true" aria-label="${esc(title)}" tabindex="-1" data-od-id="modal-dialog"><div class="handle" aria-hidden="true"></div><div class="row"><h2>${title}</h2><button class="iconbtn" onclick="closeModal()" aria-label="关闭">×</button></div>${body}</section></div>`;
+ for(const selector of ['#screen','#bottom-nav','.rail','.desk-head'])$(selector).inert=true;
+ const dialog=$('#overlay .sheet');
+ (dialog.querySelector('input:not([type="hidden"]),textarea,button')||dialog).focus({preventScroll:true});
+}
+function closeModal(restore=true){
+ if(!$('#overlay').firstElementChild)return;
+ $('#overlay').innerHTML='';
+ for(const selector of ['#screen','#bottom-nav','.rail','.desk-head'])$(selector).inert=false;
+ if(restore&&modalReturnFocus?.isConnected)modalReturnFocus.focus({preventScroll:true});
+ modalReturnFocus=null;
+}
+function info(title,text){modal(title,`<p>${text}</p><button class="primary wide" onclick="closeModal()">我知道了</button>`)}
+document.addEventListener('keydown',event=>{
+ const dialog=$('#overlay [role="dialog"]');
+ if(!dialog||event.key!=='Tab')return;
+ const controls=[...dialog.querySelectorAll('button,input,select,textarea,a[href],[tabindex]')].filter(el=>!el.disabled&&el.tabIndex>=0&&el.getClientRects().length);
+ if(!controls.length){event.preventDefault();dialog.focus();return}
+ const first=controls[0],last=controls[controls.length-1];
+ if(event.shiftKey&&(document.activeElement===first||document.activeElement===dialog)){event.preventDefault();last.focus()}
+ else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+});
+let confirmAction;function confirmSheet(title,text,fn,label='确认'){confirmAction=fn;modal(title,`<p>${text}</p><button class="primary wide" onclick="confirmAction()">${label}</button><button class="secondary wide" style="margin-top:10px" onclick="closeModal()">取消</button>`)}
+async function copyText(t){try{await navigator.clipboard.writeText(t);toast('已复制：'+t)}catch{modal('长按复制',`<p style="user-select:all">${esc(t)}</p><button class="primary wide" onclick="closeModal()">完成</button>`)}}
+const pages={home,npc,npcDetail,coins,me,orders,favorites,login,dramas:dramaList,dramaCatalog,shortSearch,globalSearch,player,detail,face,faceHistory,task,chat,store,ledger,distribution,team,earnings,invite:me,settings};
+// Preserve the NPC entry for later use; the current navigation shows the drama list.
+const showNpcNav=false;
+const npcNavItem=['npc','NPC','npc'];
+const navItems=[['home','首页','home'],showNpcNav?npcNavItem:['dramaCatalog','短剧','play'],['coins','金币','coin'],['me','我的','user']];
+const reviewItems=[['home','发现灵感','home'],['dramas','短剧剧场','play'],['face','AI 创作','image'],['npc','角色对话','npc'],['coins','金币中心','coin'],['me','个人中心','user'],['store','会员与商店','gift']];
+const descriptions={globalSearch:['01','搜索故事与创作灵感','按短剧、图片模板和视频模板查找内容，选中后直接进入播放或创作。'],orders:['06','我的订单与消费记录','按金币充值、会员购买、金币消费分类查看详情。示例记录仅用于展示；模拟消费记录与金币流水同步。'],login:['00','登录与注册','邮箱、手机号及第三方登录演示，支持选择男、女、跨性别并保存到用户资料。'],home:['01','每一次心动，从这里开始','精选故事先吸引，再自然通向换脸、角色对话与短剧。四个底部入口保持清晰。'],dramas:['02','为下一部好故事停留','按类型、地区与收藏发现短剧；进入竖屏播放器，体验选集和金币解锁。'],player:['02','沉浸观看，顺畅解锁','前3集免费；后续可用金币或模拟广告解锁。选集、剧情与角色对话相互衔接。'],face:['03','成为故事中的主角','选择图片或视频模板，读取本地照片，查看金币消耗并直接生成。所有处理只在本地模拟。'],task:['03','每一步，都有明确反馈','排队、处理中与完成可连续体验；任务提交后无法取消，完成可下载演示原图。'],npc:['04','选择角色，由你开场','搜索、收藏与最近使用支持筛选；查看详情或快速开始新对话。统计为模拟数据。'],npcDetail:['04','了解角色，再进入故事','查看故事设定、使用与收藏数量、CG氛围图，开始或继续该角色对话。'],chat:['04','一条消息，一次回应','可组合多行文字、图片与模拟语音；勾选本轮失败或带图，评审停止、重试与回复能力。'],coins:['05','快乐有回响，也有记录','签到奖励即时入账，充值只模拟确认。金币余额、任务扣费与流水同步更新。'],me:['06','属于你的娱乐空间','收藏、历史、会员与分销，汇聚于个人中心。次要功能使用轻量弹层。'],distribution:['07','邀请好友一起赚钱','查看分销商套餐、直接与间接分润比例及活动规则。开通与收益仅在本地模拟。'],team:['07','我的分销团队','查看总人数、直推人数、间推人数和团队记录。'],earnings:['07','每一份收益，清楚记录','查看佣金金额、总收入、直接收入、间接收入和入账记录。'],invite:['07','好故事，一起分享','复制邀请码或邀请链接，让好友加入你的团队。'],store:['08','权益清楚，选择轻松','美元示例套餐与会员月付。没有真实支付、扣款或自动续费。']};
+function syncAppNavigation(){
+ document.querySelectorAll('#bottom-nav button').forEach(button=>button.setAttribute('aria-current',button.classList.contains('active')?'page':'false'));
+ const group=['distribution','team','earnings','invite'].includes(page)?'me':page==='globalSearch'?'home':['dramaCatalog','shortSearch','player','detail'].includes(page)?'dramas':['task','faceHistory'].includes(page)?'face':['npcDetail','chat'].includes(page)?'npc':page;
+ document.querySelectorAll('#desktop-nav button').forEach((button,index)=>{
+  const active=reviewItems[index][0]===group;
+  button.classList.toggle('active',active);button.setAttribute('aria-current',active?'page':'false');
+ });
+}
+function stamp(){document.querySelectorAll('#screen h1,#screen h2,#screen h3,#screen button,#screen input,#screen select,#screen section').forEach((el,i)=>{if(!el.hasAttribute('data-od-id'))el.setAttribute('data-od-id',page+'-'+el.tagName.toLowerCase()+'-'+i)})}
+function render(){if(page==='chat'&&npcSession()){characterId=npcSession().role;state.npcResume=true;npcStore()}else if(state.npcResume){state.npcResume=false;npcStore()}let full=['chat','player','login','globalSearch','task'].includes(page)||(page==='face'&&faceStep!==1);$('#screen').dataset.page=page;$('#screen').className='screen'+(full?' full':'');$('#screen').innerHTML=(pages[page]||home)();let active=['dramas','dramaCatalog','shortSearch','player','detail'].includes(page)?'dramaCatalog':['home','npc','coins','me'].includes(page)?(page==='npc'&&!showNpcNav?'home':page):['chat','npcDetail'].includes(page)?(showNpcNav?'npc':'home'):['store','ledger'].includes(page)?'coins':['orders','favorites','distribution','team','earnings','invite','settings'].includes(page)?'me':'home';$('#bottom-nav').style.display=full?'none':'flex';$('#bottom-nav').innerHTML=navItems.map(([p,t,i])=>`<button data-od-id="tab-${p}" class="${active===p?'active':''}" onclick="tab('${p}')">${I(i)}<span>${t}</span></button>`).join('');$('#desktop-nav').innerHTML=reviewItems.map(([p,t,i])=>`<button class="${page===p?'active':''}" onclick="${p==='face'?"openFace('image')":`tab('${p}')`}">${I(i)}${t}</button>`).join('');let d=descriptions[page]||descriptions.me;$('#review-note').innerHTML=`<div class="eyebrow">HONGGUO / APP EXPERIENCE</div><div class="number" style="margin-top:20px">${d[0]}<span style="font-size:12px;color:var(--muted);margin-left:12px">/ 08</span></div><h2>${d[1]}</h2><p>${d[2]}</p><hr><p class="mini">DESIGNED FOR YOUR MOMENT</p><p style="margin-top:10px">在手机中探索、创作与追剧。<br>点击左侧导航，切换 App 页面。</p><span class="preview-chip">APP 交互预览 · 本地模拟</span>`;stamp();syncAppNavigation();shortMount();faceStudioMount();if(page==='chat'&&window.matchMedia('(min-width:1101px)').matches){let log=$('#chat-log');if(log)log.scrollTop=log.scrollHeight}}
+$('#status-icons').innerHTML=I('signal')+I('battery');document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#overlay').innerHTML)closeModal();else if(stack.length)back()}});npcInit();if(new URLSearchParams(location.search).get('invite')){authMode='register';authDraft.invite=new URLSearchParams(location.search).get('invite')}if(location.hash==='#me')page='me';if(location.hash==='#search')page='globalSearch';if(location.hash==='#creations')page='faceHistory';if(location.hash==='#distribution')page='distribution';if(location.hash==='#team')page='team';if(location.hash==='#earnings')page='earnings';if(location.hash==='#invite')page='me';if(location.hash==='#orders')page='orders';if(location.hash==='#login')page='login';if(location.hash==='#dramas')page='dramas';if(location.hash==='#home-drama')homeFeature='drama';if(['#face-image','#face-video'].includes(location.hash)){page='face';faceStep=2;faceType=location.hash==='#face-video'?'video':'image'}if(location.hash==='#npc')page='npc';if(location.hash==='#npc-detail')page='npcDetail';if(location.hash==='#npc-chat'){if(!npcSession())npcCreate(characterId);page='chat'}render();scheduleTask();if(location.hash==='#invite')openDistributorInvite();
+// Desktop mouse controls complement native touch scrolling on template tags.
+let faceTagDrag=null,faceTagBlockedClick=null;
+document.addEventListener('pointerdown',event=>{
+ faceTagBlockedClick=null;
+ const nav=event.target.closest('.face-filter-tabs');
+ if(event.pointerType!=='mouse'||event.button!==0||!nav||nav.scrollWidth<=nav.clientWidth+1)return;
+ faceTagDrag={nav,id:event.pointerId,x:event.clientX,scroll:nav.scrollLeft,moved:false};
+});
+document.addEventListener('pointermove',event=>{
+ const drag=faceTagDrag;if(!drag||event.pointerId!==drag.id)return;
+ const delta=event.clientX-drag.x;
+ if(!drag.moved&&Math.abs(delta)<5)return;
+ if(!drag.moved){drag.moved=true;drag.nav.classList.add('dragging');drag.nav.setPointerCapture(event.pointerId)}
+ event.preventDefault();drag.nav.scrollLeft=drag.scroll-delta;
+});
+function finishFaceTagDrag(event){
+ const drag=faceTagDrag;if(!drag||event.pointerId!==drag.id)return;
+ drag.nav.classList.remove('dragging');
+ if(drag.moved)faceTagBlockedClick={nav:drag.nav,until:performance.now()+300};
+ faceTagDrag=null;
+}
+document.addEventListener('pointerup',finishFaceTagDrag);
+document.addEventListener('pointercancel',finishFaceTagDrag);
+document.addEventListener('click',event=>{
+ const block=faceTagBlockedClick;
+ if(event.detail&&block&&performance.now()<block.until&&block.nav.contains(event.target)){event.preventDefault();event.stopImmediatePropagation();faceTagBlockedClick=null}
+},true);
+document.addEventListener('wheel',event=>{
+ const nav=event.target.closest('.face-filter-tabs');
+ if(!nav||event.ctrlKey||event.deltaX||!event.deltaY||nav.scrollWidth<=nav.clientWidth+1)return;
+ const before=nav.scrollLeft,scale=event.deltaMode===1?16:event.deltaMode===2?nav.clientWidth:1;
+ nav.scrollLeft+=event.deltaY*scale;if(nav.scrollLeft!==before)event.preventDefault();
+},{passive:false});
+</script>
+<script src="./od-overlay.js"></script>
+</body>
+</html>
